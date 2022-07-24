@@ -1,0 +1,28 @@
+$primary: #409EFF !default;
+$success: #67C23A !default;
+$warning: #E6A23C !default;
+$danger: #F56C6C !default;
+$info: #909399 !default;
+$default: none !default;
+
+$plain-primary: #e2edf8 !default;
+$plain-success: #f0f9eb !default;
+$plain-warning: #fbf3e6 !default;
+$plain-danger: #f6dcdc !default;
+$plain-info: #e2e8f4 !default;
+
+$colorList: (
+    primary: $primary,
+    success: $success,
+    warning: $warning,
+    danger: $danger,
+    info: $info,
+    default: $default,
+);
+$plain-colorList: (
+    plain-primary: $plain-primary,
+    plain-success: $plain-success,
+    plain-warning: $plain-warning,
+    plain-danger: $plain-danger,
+    plain-info: $plain-info,
+    )

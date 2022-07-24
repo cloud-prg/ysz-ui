@@ -1,0 +1,39 @@
+{
+  "name": "c-testuilib",
+  "private": false,
+  "version": "0.0.1",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "node-sass": "^7.0.1",
+    "sass": "^1.53.0",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@highlightjs/vue-plugin": "^2.1.0",
+    "@vitejs/plugin-vue": "^3.0.0",
+    "highlight.js": "^11.6.0",
+    "path": "^0.12.7",
+    "url": "^0.11.0",
+    "vite": "^3.0.0",
+    "vite-plugin-vue-markdown": "^0.20.1",
+    "vue-router": "^4.1.2"
+  },
+  "main": "./dist/c-ui-umd.js",
+  "module": "./dist/c-ui-es.js",
+  "exports": {
+    ".": {
+      "require": "./dist/c-ui-umd.js",
+      "import": "./dist/c-ui-es.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist/*"
+  ]
+}
