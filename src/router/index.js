@@ -7,13 +7,16 @@ const routes = routePages;
 const router = createRouter({
     routes,
     history: createWebHashHistory(),
-    scrollBehavior: (to, from, savedPosition) => {
+    /**
+     * 单页面路由跳转，滚动条置顶
+     * 由于浏览器特性，在页面切换时，滚动条会保留在原来的位置。因此需要用路由守卫去矫正
+    */
+    scrollBehavior(to, from, savePosition) {
         document.title = to.name;
-        if (to.fullPath != "/") {
-            document.querySelector(".yunuirightView").scrollTop = 0;
+        if (to.fullPath != '/') {
+            document.querySelectorAll(".rightView").scrollTop = 0;
         }
-    },
-
+    }
 })
 
 export default router;

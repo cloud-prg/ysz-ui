@@ -25,4 +25,16 @@ $plain-colorList: (
     plain-warning: $plain-warning,
     plain-danger: $plain-danger,
     plain-info: $plain-info,
-    )
+);
+
+
+$border-base-color: #e2dede !default;
+$title-base-color: #2c3e50 !default;
+$describe-base-color: #6a8bad !default;
+
+
+
+$font-size-base: 16px !default;
+$font-size-sm: 12px !default;
+$font-size-lg: 20px !default;
+$font-size-xl: 24px !default;
