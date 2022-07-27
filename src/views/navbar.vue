@@ -1,8 +1,11 @@
 <script setup>
 import logoImg from "../assets/logo.jpg";
-import { reactive } from "vue";
+import { onMounted, reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 const route = useRouter();
+
+// 导航栏激活标签
+let tabIndex = ref(0);
 
 const nav = reactive({
     list: [
@@ -21,26 +24,32 @@ const nav = reactive({
         },
     ]
 })
-
 // 转到首页
 const toHome = () => {
-    route.push("/")
+   route.push('/')
 }
-
 // 转到其他页
 const toOther = (item, index) => {
+    console.log(item,index)
+    // 跳转的同时记录下标，存储到会话中
     if (item.path != "blank") {
+        sessionStorage.setItem("tabIndex", index);
+        tabIndex.value = index;
         route.push(item.path);
     } else {
         window.open(item.url);
     }
 }
 
+onMounted(() => {
+    // 如果会话存储能够取值标签栏下标
+    const storageIndex = sessionStorage.getItem("tabIndex");
+    +storageIndex && (tabIndex.value = storageIndex)
+})
 
+defineExpose({toOther});
 
 </script>
-
-
 <template>
     <!-- 组件库导航栏 -->
     <!-- 该有的结构: flex布局,水平布局按照中间空白隔开的方式。左侧logo,右侧导航菜单。 -->
@@ -59,7 +68,7 @@ const toOther = (item, index) => {
 
         <div class="right-part">
             <a v-for="(item, index) in nav.list" :key="index" href="javascript:;" @click="toOther(item, index)"
-                class="nav-item">
+                :class="{ 'nav-item': true, active: tabIndex == index }">
                 {{ item.name }}
             </a>
         </div>
@@ -69,7 +78,6 @@ const toOther = (item, index) => {
 
 <style lang="scss" scoped>
 .navbar {
-    // border: 1px solid red;
     background-color: white;
     box-shadow: 0px 1px 5px 0px #f0f0f0;
     height: 58px;
@@ -123,24 +131,23 @@ const toOther = (item, index) => {
         height: 100%;
 
         .nav-item {
-            padding: 0 10px;
+            // padding: 0 10px;
             height: calc(100% - 2px);
             font-size: 20px;
             line-height: 2.7;
             border-bottom: 2px solid transparent;
-            width: 50px;
+            width: 40px;
+            height: 47px;
+            margin: 0 15px;
             text-align: center;
 
-            &:hover {
+            &:hover,
+            &.active {
+                color: $primary;
                 border-bottom: 2px solid $primary;
                 cursor: pointer;
-                background: linear-gradient(to top, $primary 0%, white 5%);
                 transition: all 0.2s ease;
             }
-        }
-
-        .nav-item + .nav-item{
-            border-left: 1px solid $border-base-color;
         }
     }
 }

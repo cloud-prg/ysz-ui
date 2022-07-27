@@ -16,9 +16,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
-import DownArrow from "@/assets/DownArrow.png";
-import UpArrow from "@/assets/UpArrow.png";
+import { ref } from "vue";
 
 let isShowCode = ref(false);
 
@@ -68,10 +66,6 @@ getCode(comName, demoName)
 </script>
 
 <style lang="scss" scoped>
-.slide-fade-enter-from {
-    opacity: 0;
-}
-
 .slide-fade-enter-to {
     opacity: 1;
     transition: all 0.5s ease;
@@ -81,8 +75,9 @@ getCode(comName, demoName)
     opacity: 1;
 }
 
-.slide-fade-leave-to {
+.slide-fade-enter-from,.slide-fade-leave-to {
     opacity: 0;
+    transform: translateY(-25px);
     transition: all 0.3s ease;
 }
 

@@ -2,11 +2,11 @@
 import { useRouter } from "vue-router";
 import logoImg from "../assets/logo.jpg";
 import { ref, onMounted, reactive } from "vue";
-
 let introduceHeight = ref(0);
 const route = useRouter();
 const toHome = () => {
-    route.push("/home/button");
+    // 调用父级的方法
+    toOther();
 }
 
 const feature = reactive({
@@ -26,6 +26,13 @@ const feature = reactive({
     ]
 })
 
+const { toOther} = defineProps({
+    toOther:{
+        type: Function,
+        default:()=>{}
+    }
+})
+
 onMounted(() => {
     const navbarRef = document.getElementsByClassName("navbar")[0]
     const navbarHeight = navbarRef.clientHeight;
@@ -38,7 +45,7 @@ onMounted(() => {
         <img :src="logoImg" alt="介绍页logo" />
         <span class="title">个人组件库</span>
         <span class="describe">纯手工搭建,方便扩展</span>
-        <c-button class="button-container" type="primary" @click="toHome">点击进入</c-button>
+        <c-button size="xl" class="button-container" type="primary" @click="toHome">点击进入🚀</c-button>
         <div class="feature-list">
             <div class="item">
                 <span class="title">手工搭建</span>
@@ -62,26 +69,23 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    padding: 20px 0 25px 0;
+    box-sizing: border-box;
 
     img {
         width: 200px;
-        margin-top: 20px;
     }
 
     .title {
         color: $title-base-color;
         font-weight: bold;
         font-size: 40px;
-        margin: 15px 0;
     }
 
     .describe {
         color: $describe-base-color;
         font-size: 20px;
-    }
-
-    .button-container {
-        margin: 15px 0;
     }
 
     .feature-list {
@@ -91,7 +95,7 @@ onMounted(() => {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 70%;
+        width: 80%;
 
         .item {
             display: flex;

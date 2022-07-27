@@ -35,6 +35,15 @@ $describe-base-color: #6a8bad !default;
 
 
 $font-size-base: 16px !default;
+$font-size-md: 16px !default;
 $font-size-sm: 12px !default;
 $font-size-lg: 20px !default;
 $font-size-xl: 24px !default;
+
+
+$sizeList:(
+    sm : $font-size-sm,
+    md: $font-size-base,
+    lg: $font-size-lg,
+    xl: $font-size-xl
+)

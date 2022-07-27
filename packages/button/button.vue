@@ -7,7 +7,7 @@ export default {
 import { computed } from "vue";
 
 
-const { type, plain , disabled } = defineProps({
+const { type, plain , disabled , size} = defineProps({
     type: {
         type: String,
         default: "default"
@@ -19,26 +19,26 @@ const { type, plain , disabled } = defineProps({
     disabled: {
         type: Boolean,
         default: false,
+    },
+    size: {
+        type: String,
     }
 })
 
 const typeArr = ["success", "warning", "info", "danger", "primary"]
+const sizeArr = ["sm","md","lg","xl"];
 
 const cClass = computed(() => {
     let classArr = ['c-button'];
     let computedType = typeArr.includes(type) ? `c-button-${type}` : 'c-button-default';
-    // plain && computedType = computedType.split("-")
-    if (plain) {
-        computedType = computedType.split("-");
-        computedType.splice(2, 0, "plain")
-        computedType = computedType.join("-")
-    }
-
-
-    classArr.push(computedType);
-
+    // 如果朴素风格开启
+    plain && type && (computedType = `c-button-plain-${type}`);
+    
+    classArr.push(computedType)
+    // 如果禁用功能开启
     disabled && classArr.push("c-button-disabled")
-
+    // 如果传入size
+    sizeArr.includes(size) && classArr.push(`c-button-${size}`)
     return classArr
 })
 
@@ -69,17 +69,22 @@ button {
     border-radius: 5px;
 }
 
+// 默认朴素风格下的边框,字体颜色
 .c-button-default , .c-button-plain-default {
     color: black;
     border: 1px solid rgb(185, 183, 183);
 }
+
+// 默认朴素风格下的字体颜色
 .c-button-plain-default:hover{
     color: rgb(195, 192, 192) !important;
 }
 
-
+// 不同主题的颜色渲染
 @each $key,
 $val in $colorList {
+
+    // 渲染不同主题的背景色
     .c-button-#{$key} {
         background-color: $val;
 
@@ -88,6 +93,7 @@ $val in $colorList {
         }
     }
 
+    // 这里需要渲染朴素风格的字体颜色，激活颜色
     .c-button-plain-#{$key} {
         color: $val;
         border: 1px solid $val;
@@ -101,18 +107,29 @@ $val in $colorList {
 
 }
 
+
+// 不同朴素风格的颜色渲染
 @each $key,
 $val in $plain-colorList {
+    // 渲染不同朴素风格的背景色
     .c-button-#{$key} {
         background-color: $val;
     }
 }
 
+// 朴素风格的禁用同时注意修改不透明度。
 .c-button-disabled.c-button {
     cursor: not-allowed;
     opacity: 0.6;
     &:hover{
         opacity: 0.6;
+    }
+}
+
+
+@each $key,$val in $sizeList{
+    .c-button-#{$key}{
+        font-size: $val;
     }
 }
 </style>
