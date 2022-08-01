@@ -119,4 +119,8 @@ pre {
 pre code.hljs {
     padding: 0 20px;
 }
+
+.language-html:hover{
+    background-color: $light-white;
+}
 </style>

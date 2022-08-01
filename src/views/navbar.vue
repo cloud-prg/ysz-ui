@@ -15,10 +15,10 @@ const nav = reactive({
         },
         {
             name: "组件",
-            path: "/home/button"
+            path: "/home/introduce"
         },
         {
-            name: "博客",
+            name: "个人博客",
             path: "blank",
             url: "https://yunshangzhou.github.io/js-book/"
         },
@@ -26,11 +26,14 @@ const nav = reactive({
 })
 // 转到首页
 const toHome = () => {
-   route.push('/')
+    // 同时要修改下标，存储至会话当中
+    sessionStorage.setItem("tabIndex", 0);
+    tabIndex.value = 0;
+    route.push('/')
 }
 // 转到其他页
 const toOther = (item, index) => {
-    console.log(item,index)
+    console.log(item, index)
     // 跳转的同时记录下标，存储到会话中
     if (item.path != "blank") {
         sessionStorage.setItem("tabIndex", index);
@@ -47,7 +50,7 @@ onMounted(() => {
     +storageIndex && (tabIndex.value = storageIndex)
 })
 
-defineExpose({toOther});
+defineExpose({ toOther });
 
 </script>
 <template>
@@ -133,11 +136,11 @@ defineExpose({toOther});
         .nav-item {
             // padding: 0 10px;
             height: calc(100% - 2px);
-            font-size: 20px;
-            line-height: 2.7;
-            border-bottom: 2px solid transparent;
-            width: 40px;
-            height: 47px;
+            font-size: $font-size-md;
+            line-height: 3.3;
+            border-bottom: 5px solid transparent;
+            min-width: 40px;
+            height: 57px;
             margin: 0 15px;
             text-align: center;
 

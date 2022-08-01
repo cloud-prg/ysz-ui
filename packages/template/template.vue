@@ -1,3 +1,8 @@
+<script>
+export default {
+    name:"",
+}
+</script>
 <script setup>
 
 </script>

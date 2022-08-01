@@ -1,9 +1,7 @@
 <script setup>
-import { useRouter } from "vue-router";
 import logoImg from "../assets/logo.jpg";
 import { ref, onMounted, reactive } from "vue";
-let introduceHeight = ref(0);
-const route = useRouter();
+let entryHeight = ref(0);
 const toHome = () => {
     // 调用父级的方法
     toOther();
@@ -26,26 +24,26 @@ const feature = reactive({
     ]
 })
 
-const { toOther} = defineProps({
-    toOther:{
+const { toOther } = defineProps({
+    toOther: {
         type: Function,
-        default:()=>{}
+        default: () => { }
     }
 })
 
 onMounted(() => {
     const navbarRef = document.getElementsByClassName("navbar")[0]
     const navbarHeight = navbarRef.clientHeight;
-    introduceHeight.value = document.documentElement.clientHeight - navbarHeight;
+    entryHeight.value = document.documentElement.clientHeight - navbarHeight;
 })
 </script>
 
 <template>
-    <div class="introduce" :style="{ height: introduceHeight + 'px' }">
+    <div class="entry" :style="{ height: entryHeight + 'px' }">
         <img :src="logoImg" alt="介绍页logo" />
         <span class="title">个人组件库</span>
         <span class="describe">纯手工搭建,方便扩展</span>
-        <c-button size="xl" class="button-container" type="primary" @click="toHome">点击进入🚀</c-button>
+        <c-button size="xl" class="button-container" type="primary" @click="toHome">快速上手🚀</c-button>
         <div class="feature-list">
             <div class="item">
                 <span class="title">手工搭建</span>
@@ -60,12 +58,16 @@ onMounted(() => {
                 <span class="describe">记录日常开发或游览社区时的灵感。</span>
             </div>
         </div>
+
+        <div class="right-clare">
+            MIT Licensed | Copyright © 2022-present
+        </div>
     </div>
 </template>
 
 
 <style lang="scss">
-.introduce {
+.entry {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,7 +76,7 @@ onMounted(() => {
     box-sizing: border-box;
 
     img {
-        width: 200px;
+        width: 300px;
     }
 
     .title {
@@ -100,13 +102,16 @@ onMounted(() => {
         .item {
             display: flex;
             flex-direction: column;
-            width: 30%;
+            width: auto;
+            height: 70%;
+            justify-content: space-around;
 
             .title {
                 font-size: $font-size-xl;
             }
 
             .describe {
+
                 font-size: $font-size-base;
             }
 
@@ -117,9 +122,13 @@ onMounted(() => {
         }
 
         .item+.item {
-            padding-left: 15px;
-            border-left: 1px solid #f0f0f0;
+            padding-left: 55px;
+            border-left: 1px solid $border-deep-color;
         }
+    }
+
+    .right-clare{
+        color: $clare;
     }
 }
 </style>

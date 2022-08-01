@@ -1,7 +1,7 @@
 {
-  "name": "c-testuilib",
+  "name": "ysz-ui",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "commonjs",
   "scripts": {
     "dev": "vite",
@@ -12,7 +12,8 @@
     "@types/node": "^18.0.6",
     "node-sass": "^7.0.1",
     "sass": "^1.53.0",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue3-perfect-scrollbar": "^1.6.0"
   },
   "devDependencies": {
     "@highlightjs/vue-plugin": "^2.1.0",

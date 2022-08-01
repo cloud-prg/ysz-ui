@@ -4,6 +4,10 @@ $warning: #E6A23C !default;
 $danger: #F56C6C !default;
 $info: #909399 !default;
 $default: none !default;
+$light-white: #fff9f2 !default;
+$clare: #4e6e8e !default;
+$item: #444 !default;
+
 
 $plain-primary: #e2edf8 !default;
 $plain-success: #f0f9eb !default;
@@ -29,21 +33,24 @@ $plain-colorList: (
 
 
 $border-base-color: #e2dede !default;
+$border-deep-color: #c0d2e3 !default;
 $title-base-color: #2c3e50 !default;
 $describe-base-color: #6a8bad !default;
-
+$scrollbar-base-color: #1b8bf3 !default;
 
 
 $font-size-base: 16px !default;
-$font-size-md: 16px !default;
 $font-size-sm: 12px !default;
-$font-size-lg: 20px !default;
-$font-size-xl: 24px !default;
+$font-size-md: 16px !default;
+$font-size-ml: 20px !default;
+$font-size-lg: 24px !default;
+$font-size-xl: 28px !default;
 
 
 $sizeList:(
     sm : $font-size-sm,
     md: $font-size-base,
+    ml: $font-size-ml,
     lg: $font-size-lg,
     xl: $font-size-xl
 )
