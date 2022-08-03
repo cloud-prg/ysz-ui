@@ -14,7 +14,8 @@ const router = createRouter({
     scrollBehavior(to, from, savePosition) {
         document.title = to.name;
         if (to.fullPath != '/') {
-            document.querySelectorAll(".rightView").scrollTop = 0;
+            console.log(document.querySelector(".router-view").scrollTop);
+            document.querySelector(".router-view").scrollTop = 0;
         }
     }
 })

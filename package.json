@@ -1,21 +1,37 @@
 {
   "name": "ysz-ui",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.9",
   "type": "commonjs",
+  "keywords": [
+    "vue",
+    "vue3",
+    "vuejs",
+    "vite",
+    "mzl-ui",
+    "ui",
+    "vueui",
+    "vertical",
+    "horizontal"
+  ],
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build-iconfont": "vite build && node ./src/utils/handleBuild.js",
     "preview": "vite preview"
   },
   "dependencies": {
+
+  },
+  "devDependencies": {
     "@types/node": "^18.0.6",
     "node-sass": "^7.0.1",
     "sass": "^1.53.0",
     "vue": "^3.2.37",
-    "vue3-perfect-scrollbar": "^1.6.0"
-  },
-  "devDependencies": {
+    "vue3-perfect-scrollbar": "^1.6.0",
     "@highlightjs/vue-plugin": "^2.1.0",
     "@vitejs/plugin-vue": "^3.0.0",
     "highlight.js": "^11.6.0",
@@ -25,16 +41,14 @@
     "vite-plugin-vue-markdown": "^0.20.1",
     "vue-router": "^4.1.2"
   },
-  "main": "./dist/c-ui-umd.js",
-  "module": "./dist/c-ui-es.js",
+  "main": "./dist/ysz-ui-umd.js",
+  "module": "./dist/ysz-ui-es.js",
   "exports": {
     ".": {
-      "require": "./dist/c-ui-umd.js",
-      "import": "./dist/c-ui-es.js"
+      "require": "./dist/ysz-ui-umd.js",
+      "import": "./dist/ysz-ui-es.js"
     },
-    "./dist/style.css": "./dist/style.css"
-  },
-  "files": [
-    "dist/*"
-  ]
+    "./dist/style.css": "./dist/style.css",
+    "./dist/iconfont.css": "./dist/iconfont.css"
+  }
 }

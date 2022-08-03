@@ -1,8 +1,9 @@
 import cButton from "./button/";
 import input from "./input/";
+import backtop from "./backtop/";
 
 // 组件列表，在app实例上注册
-const components = [cButton, input];
+const components = [cButton, input, backtop];
 
 // 表达式写成函数的好处：能在return前添加额外的执行语句。
 const install = app => {
@@ -15,8 +16,8 @@ const install = app => {
 }
 
 // 判断是否是直接引入文件
-if (window?.Vue) {
+if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue)
 }
-
-export default { components, install };
+const yszUI = { install };
+export default yszUI;

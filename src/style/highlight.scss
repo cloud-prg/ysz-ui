@@ -1,0 +1,40 @@
+.hljs {
+  background-color: white !important;
+
+ 
+}
+
+// 组件名字
+.hljs-name{
+  color: #1f67b0;
+}
+
+// 整体标签
+.hljs-tag{
+  color:#828485;
+}
+
+// 属性字体
+.hljs-attr{
+  color:#4b9aea;
+}
+// 属性内容
+.hljs-string {
+  color: #e95726;
+}
+
+pre {
+  margin: 0;
+  padding: 5px 0;
+  display: flex;
+
+  code {
+    flex: 1;
+  }
+}
+
+pre code.hljs {
+  padding: 0 20px;
+}
+
+.language-html:hover {}

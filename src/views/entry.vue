@@ -62,6 +62,11 @@ onMounted(() => {
         <div class="right-clare">
             MIT Licensed | Copyright © 2022-present
         </div>
+
+        <div>
+            <i class="c-icon-backtop1"></i>
+            <i class="c-icon-download"></i>
+        </div>
     </div>
 </template>
 

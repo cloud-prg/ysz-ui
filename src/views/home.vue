@@ -19,7 +19,6 @@
                 <transition name="slide-fade" mode="out-in">
                     <component :is="Component" />
                 </transition>
-                <img @click="toTop" :src="toTopImg" class="to-top" />
             </router-view>
         </perfect-scrollbar>
 
@@ -30,7 +29,6 @@
 import menuList from "@/router/routerPage/pages.js";
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
-import toTopImg from "../assets/toTop.png"
 let homeHeight = ref(0); // 主页高度
 let activeIndex = ref("prologue-0"); // 导航下标
 const router = useRouter(); // 实例化路由
@@ -160,13 +158,6 @@ html {
         margin-left: 300px;
         position: relative;
 
-        .to-top {
-            width: 50px;
-            position: fixed;
-            right: 60px;
-            bottom: 60px;
-            cursor: pointer;
-        }
     }
 }
 </style>

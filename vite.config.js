@@ -18,9 +18,9 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: "./packages/index",
-      name: "c-ui-lib",
-      fileName: format => `c-ui-${format}.js`,
+      entry: "./packages/index.js",
+      name: "ysz-ui",
+      fileName: format=> `ysz-ui-${format}.js`
     },
     rollupOptions: {
       external: ["vue"],
