@@ -30,7 +30,7 @@ import menuList from "@/router/routerPage/pages.js";
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 let homeHeight = ref(0); // 主页高度
-let activeIndex = ref("prologue-0"); // 导航下标
+let activeIndex = ref(sessionStorage.getItem("menuIndex") || "prologue-0"); // 导航下标
 const router = useRouter(); // 实例化路由
 const docList = menuList[0].children; // 文档列表
 const routerViewRef = ref(null); // 子路由的文本对象
@@ -48,7 +48,7 @@ docList.forEach(item => {
 
 // 左侧栏点击，右侧内容变化
 const handleChangeActive = (name, index) => {
-    console.log(name, index)
+    sessionStorage.setItem("menuIndex",index);
     activeIndex.value = index;
     router.push({ name })
 }

@@ -1,20 +1,8 @@
-<template>
-    <div class="preview-container" v-highlight>
-        <transition name="slide-fade">
-            <pre  class="language-html" v-show="isShowCode">
-           <code class=" language-html" v-html="context" ></code>  
-        </pre>
-
-        </transition>
-
-        <div class="footer" @click="handleToggleShow">
-            <span>{{ isShowCode ? '隐藏代码' : '显示代码' }}</span>
-            &lt;/
-            &gt;
-        </div>
-    </div>
-</template>
-
+<script>
+export default {
+    name: "preview",
+}
+</script>
 <script setup>
 import { onMounted, ref, getCurrentInstance } from "vue";
 
@@ -47,7 +35,7 @@ function getCode(comName, demoName) {
     if (isDev) {
         Promise.resolve(import(/* @vite-ignore */url)).then(res => {
             const { default: df } = res; // 返回的default并不能用v-html去解析，因为它并没有完全解析成原生代码。
-            
+
             // hljs.highlightAuto可以让default转为原生html,通过取值value即可。
             context.value = proxy.$hljs.highlightAuto(df).value;
         })
@@ -69,10 +57,28 @@ getCode(comName, demoName)
 
 </script>
 
+<template>
+    <div class="preview-container" v-highlight>
+        <transition name="slide-fade">
+            <pre class="language-html" v-show="isShowCode">
+           <code class=" language-html" v-html="context" ></code>  
+        </pre>
+
+        </transition>
+
+        <div class="footer" @click="handleToggleShow">
+            <span>{{ isShowCode ? '隐藏代码' : '显示代码' }}</span>
+            &lt;/
+            &gt;
+        </div>
+    </div>
+</template>
+
+
 <style lang="scss" scoped>
 .slide-fade-enter-to {
     opacity: 1;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
 }
 
 .slide-fade-leave-from {
@@ -83,21 +89,19 @@ getCode(comName, demoName)
 .slide-fade-leave-to {
     opacity: 0;
     transform: translateY(-25px);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .preview-container {
     width: auto;
     height: auto;
-    margin: 10px 0;
-    border: 1px solid #dad7d7;
-
+    box-shadow: 0px 0px 1px 1px $footer-base-color;
     .footer {
-        border-top: 1px solid #f0f0f0;
         cursor: pointer;
         text-align: center;
         background-color: rgb(252, 251, 251);
         font-weight: 100;
+        box-shadow: 0px 0px 1px 1px $footer-base-color;
 
         .arrow {
             width: 15px;

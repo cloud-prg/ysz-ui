@@ -1,6 +1,3 @@
-<script setup>
- import preview from "@/components/preview.vue"
-</script>
 # 全局安装
 安装命令:
 `npm install ysz-ui -S`

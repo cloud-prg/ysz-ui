@@ -67,6 +67,7 @@ button {
     font-size: 14px;
     color: #f0f0f0;
     border-radius: 5px;
+    display: inline-block;
 }
 
 // 默认朴素风格下的边框,字体颜色
