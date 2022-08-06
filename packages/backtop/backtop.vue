@@ -1,32 +1,133 @@
+<!--
+ * @Author: Yun 912453237@qq.com
+ * @Date: 2022-08-02 13:18:34
+ * @LastEditors: Yun 912453237@qq.com
+ * @LastEditTime: 2022-08-04 22:32:52
+ * @FilePath: \vuepress-learn-jsf:\test-baseui\packages\backtop\backtop.vue
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Yun 912453237@qq.com, All Rights Reserved. 
+-->
+
 <script>
 export default {
-    name:"backtop",
+    name: "backtop",
 }
 </script>
-
-
 <script setup>
-import {ref , useSlots} from "vue";
+import { onBeforeUnmount, onMounted, ref, useSlots } from "vue";
+
+// 取传值
+const { target, delay, right, bottom} = defineProps({
+    target: {
+        type: String,
+        default: "body"
+    },
+    delay: {
+        type: Number,
+        default: 10
+    },
+    right: {
+        type: Number,
+        default: 15
+    },
+    bottom: {
+        type: Number,
+        default: 15
+    },
+})
 
 const slot = useSlots(); // 插槽对象实例化;
 const isShow = ref(false); // 是否显示
-const right = ref(15); // 距离右边框的百分比
-const bottom = ref(15); // 距离下边框的百分比
+const innerRight = ref(right); // 距离右边框的百分比
+const innerBottom = ref(bottom); // 距离下边框的百分比
+const timer = ref(null); // 滚动条不断向上移动距离 定时器
+const targetScrollTop = ref(0) // 目标文本对象滚动条顶部距离，用于控制图标是否显示
+
+// 点击回滚至顶
+const handleBacktop = () => {
+    /**
+     * - 设置定时器, 每隔特定时间 滚动条向上滚动
+     * - 如果目标文本对象 滚动条的 scrollTop 小于等于0 , 清除定时器。
+     * - 每次点击的时候,清除定时器，并重新赋值新的。做到防抖效果
+    */
+    timer.value != null && clearInterval(timer);
+
+    timer.value = setInterval(() => {
+        targetScrollTop.value -= 30; // 每隔一段时间，向上滑动30px
+        if (typeof document != "undefined") {
+            document.querySelector(target).scrollTop = targetScrollTop.value;
+        }
+        targetScrollTop.value <= 0 && clearInterval(timer.value) && (targetScrollTop.value = 0);
+        console.log(targetScrollTop.value )
+    }, delay)
+}
+
+// 滚动条回调
+const handleScroll = e => {
+    targetScrollTop.value = e.target.scrollTop;
+    targetScrollTop.value > 0 ? (isShow.value = true) : (isShow.value = false);
+}
+
+// 挂载后
+onMounted(() => {
+    if (typeof document != "undefined") {
+        document.querySelector(target).addEventListener("scroll", handleScroll)
+    }
+})
 
 
+// 卸载前
+onBeforeUnmount(() => {
+    if (typeof document != "undefined") {
+        document.querySelector(target).removeEventListener("scroll", handleScroll)
+    }
+})
 </script>
 
 <template>
-<div class="backtop-box">
-    <slot v-if="slot['default']"></slot>
-    <div v-else>
-        <i class="c-icon-backtop1"></i>
-    </div>
-</div>
+    <transition name="fade">
+        <div class="backtop-box" v-show="isShow" @click="handleBacktop"
+            :style="{ 'right': innerRight + 'px', 'bottom': innerBottom + 'px' }">
+            <slot v-if="slot['default']"></slot>
+            <div v-else>
+                <i class="c-icon-backtop1 backtop"></i>
+            </div>
+        </div>
+    </transition>
 
 </template>
 
 
-<style scoped>
+<style lang="scss" scoped>
+.fade-enter-from,.fade-leave-to{
+    opacity: 0;
+       transition: all 0.5s ease;
 
+}
+
+.fade-enter-to,.fade-leave-from{
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.backtop-box {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    line-height: 37px;
+    background-color: $primary;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    .backtop {
+        font-size: 30px;
+    }
+}
 </style>

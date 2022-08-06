@@ -15,12 +15,14 @@
             </div>
         </perfect-scrollbar>
         <perfect-scrollbar class="router-view">
-            <router-view  v-slot="{ Component }">
+            <router-view v-slot="{ Component }">
                 <transition name="slide-fade" mode="out-in">
                     <component :is="Component" />
                 </transition>
             </router-view>
+            <backtop :delay="5" target=".router-view" />
         </perfect-scrollbar>
+
 
     </div>
 
@@ -29,26 +31,29 @@
 import menuList from "@/router/routerPage/pages.js";
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
+import Backtop from "../../packages/backtop/backtop.vue";
 let homeHeight = ref(0); // 主页高度
 let activeIndex = ref(sessionStorage.getItem("menuIndex") || "prologue-0"); // 导航下标
 const router = useRouter(); // 实例化路由
 const docList = menuList[0].children; // 文档列表
 const routerViewRef = ref(null); // 子路由的文本对象
 
-
-let entireList = { // 文档标题，内容列表(完整列表)
+// 文档标题，内容列表(完整列表)
+let entireList = {
     journal: { name: "更新日志", clickable: true, children: [] },
     prologue: { name: "快速上手", clickable: false, children: [] },
     common: { name: "通用组件", clickable: false, children: [] },
+    
 }
+
 // 完整列表拿到对应路径
 docList.forEach(item => {
-    !item?.isCatagory && entireList[item.type].children.push(item.name);
+    !item.isUnique && entireList[item.type].children.push(item.name);
 })
 
 // 左侧栏点击，右侧内容变化
 const handleChangeActive = (name, index) => {
-    sessionStorage.setItem("menuIndex",index);
+    sessionStorage.setItem("menuIndex", index);
     activeIndex.value = index;
     router.push({ name })
 }
@@ -59,15 +64,9 @@ onMounted(() => {
     const navbarRef = document.getElementsByClassName("navbar")[0]
     const navbarHeight = navbarRef.clientHeight;
     homeHeight.value = document.documentElement.clientHeight - navbarHeight;
-
-    console.log(JSON.parse(JSON.stringify(routerViewRef.value)))
-    // const rRef = document.querySelectorAll(".router-view")[0];
-    // console.log(rRef);
 })
 
 </script>
-
-
 
 <style lang="scss" >
 html {

@@ -1,7 +1,9 @@
 <script setup>
 import logoImg from "../assets/logo.jpg";
 import { ref, onMounted, reactive } from "vue";
+import { useRouter } from "vue-router";
 let entryHeight = ref(0);
+const router = useRouter();
 const toHome = () => {
     // 调用父级的方法
     toOther();
@@ -36,6 +38,13 @@ onMounted(() => {
     const navbarHeight = navbarRef.clientHeight;
     entryHeight.value = document.documentElement.clientHeight - navbarHeight;
 })
+
+router.beforeEach((to, from, next) => {
+    if(to.path== "/home/introduce"){
+        sessionStorage.clear();
+    }
+    next();
+});
 </script>
 
 <template>

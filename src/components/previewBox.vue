@@ -1,3 +1,13 @@
+<!--
+ * @Author: Yun 912453237@qq.com
+ * @Date: 2022-08-04 02:11:10
+ * @LastEditors: Yun 912453237@qq.com
+ * @LastEditTime: 2022-08-05 10:12:49
+ * @FilePath: \vuepress-learn-jsf:\test-baseui\src\components\previewBox.vue
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Yun 912453237@qq.com, All Rights Reserved. 
+-->
 <script>
 export default {
     name: "previewBox",
@@ -16,7 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 .preview-box {
-    box-shadow: 0px 0px 1px 1px $footer-base-color;
-
+    border: 1px solid #f0f0f0;
+    border-bottom: transparent;
 }
 </style>

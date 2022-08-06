@@ -39,7 +39,13 @@ $describe-base-color: #6a8bad !default;
 $scrollbar-base-color: #1b8bf3 !default;
 $footer-base-color : #e8e5e5 !default;
 
+$table-th-background-color: #fafafa !default;
+$table-th-color: #646468 !default;
+$table-tr-color: #646468 !default;
+$table-td-color: #646468 !default;
+
 $font-size-base: 16px !default;
+$font-size-default: 16px !default;
 $font-size-sm: 12px !default;
 $font-size-md: 16px !default;
 $font-size-ml: 20px !default;
@@ -48,6 +54,7 @@ $font-size-xl: 28px !default;
 
 
 $sizeList:(
+    default: $font-size-default,
     sm : $font-size-sm,
     md: $font-size-base,
     ml: $font-size-ml,

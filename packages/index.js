@@ -1,6 +1,18 @@
-import cButton from "./button/";
+/*
+ * @Author: Yun 912453237@qq.com
+ * @Date: 2022-07-17 01:47:26
+ * @LastEditors: Yun 912453237@qq.com
+ * @LastEditTime: 2022-08-06 21:36:23
+ * @FilePath: \vuepress-learn-jsf:\test-baseui\packages\index.js
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Yun 912453237@qq.com, All Rights Reserved. 
+ */
+import button from "./button/";
 import input from "./input/";
 import backtop from "./backtop/";
+import table from "./table/"
+
 
 // 非功能类组件(用于代码显示)
 import preview from "../src/components/preview.vue";
@@ -8,7 +20,7 @@ import previewBox from "../src/components/previewBox.vue";
 
 
 // 组件列表，在app实例上注册
-const components = [cButton, input, backtop , preview,previewBox];
+const components = [button, input, backtop, table , preview,previewBox];
 
 // 表达式写成函数的好处：能在return前添加额外的执行语句。
 const install = app => {

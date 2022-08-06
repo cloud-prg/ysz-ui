@@ -53,6 +53,18 @@ function handleToggleShow() {
     isShowCode.value = !isShowCode.value;
 }
 
+function copyCode() {
+    const range = document.createRange(); // 创建range对象
+    range.selectNode(document.querySelector(".hljs")); //获取复制内容的 id 选择器
+    const selection = window.getSelection();  //创建 selection对象
+    if (selection.rangeCount > 0) selection.removeAllRanges(); //如果页面已经有选取了的话，会自动删除这个选区，没有选区的话，会把这个选取加入选区
+    selection.addRange(range); //将range对象添加到selection选区当中，会高亮文本块
+    document.execCommand('copy'); //复制选中的文字到剪贴板
+    // this.$toast('复制成功')
+    console.log("复制成功!");
+    selection.removeRange(range); // 移除选中的元素
+}
+
 getCode(comName, demoName)
 
 </script>
@@ -61,9 +73,9 @@ getCode(comName, demoName)
     <div class="preview-container" v-highlight>
         <transition name="slide-fade">
             <pre class="language-html" v-show="isShowCode">
-           <code class=" language-html" v-html="context" ></code>  
+           <code class=" language-html" v-html="context" ></code>
+            <i class="c-icon-copy copy" @click="copyCode"></i>
         </pre>
-
         </transition>
 
         <div class="footer" @click="handleToggleShow">
@@ -95,13 +107,37 @@ getCode(comName, demoName)
 .preview-container {
     width: auto;
     height: auto;
-    box-shadow: 0px 0px 1px 1px $footer-base-color;
+    border-top: 1px solid #f0f0f0;
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    position: relative;
+
+    .copy {
+        font-size: $font-size-lg;
+        position: absolute;
+        top: 3%;
+        right: 2%;
+        cursor: pointer;
+
+        &:hover {
+            color: $primary;
+            border-color: $primary;
+            box-shadow: 1px 2px 3px 0px $primary;
+        }
+
+
+    }
+
     .footer {
         cursor: pointer;
         text-align: center;
         background-color: rgb(252, 251, 251);
         font-weight: 100;
-        box-shadow: 0px 0px 1px 1px $footer-base-color;
+
+        &:hover {
+            box-shadow: 0px 2px 6px -2px $footer-base-color;
+            transition: box-shadow 0.2s ease;
+        }
 
         .arrow {
             width: 15px;
@@ -109,7 +145,6 @@ getCode(comName, demoName)
         }
 
         &:hover {
-            background-color: rgb(232, 243, 249);
             color: rgb(75, 133, 249);
         }
     }
