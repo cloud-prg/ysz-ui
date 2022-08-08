@@ -30,6 +30,26 @@ appInstance.directive("highlight",el=>{
 // 实例属性挂载
 appInstance.config.globalProperties.$hljs = hljs;
 
+// hljs配置
+hljs.configure({
+    ignoreUnescapedHTML: true,
+    languages: [
+      "javascript",
+      "css",
+      "python",
+      "html",
+      "bash",
+      "java",
+      "sql",
+      "json",
+      "http",
+      "go",
+      "c++",
+      "c#",
+      "",
+    ],
+  });
+
 // 全局注册组件
 appInstance.use(yszUI);
 appInstance.use(PerfectScrollbar);

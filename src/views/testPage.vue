@@ -1,29 +1,73 @@
 <template>
   <div>
-    <c-table :dataSource="dataSource"></c-table>
-    <preview :isShow="false" comName="table" demoName="demo4" />
+    <c-row>
+      <c-col :span="12">
+        <div class="col-box-2 col-box">12</div>
+      </c-col>
+      <c-col :span="12">
+        <div class="col-box-1 col-box">12</div>
+      </c-col>
+    </c-row>
+    <c-row>
+      <c-col :span="8">
+        <div class="col-box-1 col-box">8</div>
+      </c-col>
+      <c-col :span="8">
+        <div class="col-box-2 col-box">8</div>
+      </c-col>
+      <c-col :span="8">
+        <div class="col-box-1 col-box">8</div>
+      </c-col>
+    </c-row>
+    <c-row>
+      <c-col :span="6">
+        <div class="col-box-2 col-box">6</div>
+      </c-col>
+      <c-col :span="6">
+        <div class="col-box-1 col-box">6</div>
+      </c-col>
+      <c-col :span="6">
+        <div class="col-box-2 col-box">6</div>
+      </c-col>
+      <c-col :span="6">
+        <div class="col-box-1 col-box">6</div>
+      </c-col>
+    </c-row>
+    <c-row>
+      <c-col :span="4">
+        <div class="col-box-1 col-box">4</div>
+      </c-col>
+      <c-col :span="2">
+        <div class="col-box-2 col-box">2</div>
+      </c-col>
+      <c-col :span="4">
+        <div class="col-box-1 col-box">4</div>
+      </c-col>
+      <c-col :span="6">
+        <div class="col-box-2 col-box">6</div>
+      </c-col>
+      <c-col :span="8">
+        <div class="col-box-1 col-box">8</div>
+      </c-col>
+    </c-row>
   </div>
-
 </template>
 
-<script setup>
-import { reactive } from "vue";
-const state = reactive({
-  dataSource: {
-    fields: [
-      { field: 'id', title: 'ID', align: 'center' },
-      { field: 'name', title: '姓名', align: 'center' },
-      { field: 'job', title: '职业', align: 'center' },
-      { field: 'address', title: '地址', align: 'center' },
-      { field: 'from', title: '籍贯', align: 'center' }
-    ],
-    datas: [
-      { id: 10, name: '王小二', job: '放羊娃', address: '在那遥远的小山村', from: "民间流传故事" },
-      { id: 13, name: '猪八戒', job: '徒弟', address: '高老庄', from: "西游记神话故事" },
-      { id: 2, name: '刘老四', job: '农民', address: '可能在中国', from: "想象出来的" },
-      { id: 11, name: '白骨精', job: '妖精', address: '西游记', from: "西游记神话故事" },
-    ]
-  },
-});
-const { dataSource } = state;
-</script>
+<style lang="scss" scoped>
+.col-box {
+  height: 34px;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 34px;
+}
+
+.col-box-1 {
+  background-color: #9eaaaf;
+  color: #333;
+}
+
+.col-box-2 {
+  background-color: #505050;
+  color: #fff;
+}
+</style>

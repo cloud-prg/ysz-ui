@@ -1,16 +1,88 @@
 @font-face {
   font-family: "c-icon"; /* Project id 3562760 */
-  src: url('iconfont.woff2?t=1659492074731') format('woff2'),
-       url('iconfont.woff?t=1659492074731') format('woff'),
-       url('iconfont.ttf?t=1659492074731') format('truetype');
+  src: url('iconfont.woff2?t=1659940273713') format('woff2'),
+       url('iconfont.woff?t=1659940273713') format('woff'),
+       url('iconfont.ttf?t=1659940273713') format('truetype');
 }
 
 [class*="c-icon"] {
   font-family: "c-icon" !important;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.c-icon-adduser:before {
+  content: "\e7ae";
+}
+
+.c-icon-deleteteam:before {
+  content: "\e7af";
+}
+
+.c-icon-deleteuser:before {
+  content: "\e7b0";
+}
+
+.c-icon-addteam:before {
+  content: "\e7b1";
+}
+
+.c-icon-user:before {
+  content: "\e7b2";
+}
+
+.c-icon-team:before {
+  content: "\e7b4";
+}
+
+.c-icon-mail:before {
+  content: "\e7de";
+}
+
+.c-icon-heart:before {
+  content: "\e7df";
+}
+
+.c-icon-error:before {
+  content: "\e7e0";
+}
+
+.c-icon-star:before {
+  content: "\e7e1";
+}
+
+.c-icon-man:before {
+  content: "\e7e2";
+}
+
+.c-icon-tags:before {
+  content: "\e7e5";
+}
+
+.c-icon-stop:before {
+  content: "\e842";
+}
+
+.c-icon-audio:before {
+  content: "\e897";
+}
+
+.c-icon-audio-fill:before {
+  content: "\e898";
+}
+
+.c-icon-audiostatic:before {
+  content: "\e8e8";
+}
+
+.c-icon-comment:before {
+  content: "\e8e9";
+}
+
+.c-icon-woman:before {
+  content: "\e8f1";
 }
 
 .c-icon-loading:before {

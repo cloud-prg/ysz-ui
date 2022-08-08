@@ -45,10 +45,11 @@ a {
     text-shadow: 1px 0px 0 #f0f0f0;
   }
  
-  p {
+
+  p,ul{
+    font-size: 18px;
     line-height: 1.7;
     letter-spacing: 0.2px;
-    font-size: 17px;
   }
 
   code {

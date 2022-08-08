@@ -1,7 +1,7 @@
 {
   "name": "ysz-ui",
   "private": false,
-  "version": "0.0.9",
+  "version": "0.1.3",
   "type": "commonjs",
   "keywords": [
     "vue",
@@ -19,8 +19,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build-iconfont": "vite build && node ./src/utils/handleBuild.js",
+    "build": "vite build && node ./src/utils/handleBuild.js",
     "preview": "vite preview"
   },
   "dependencies": {},

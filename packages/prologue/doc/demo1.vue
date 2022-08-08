@@ -1,7 +1,9 @@
-<script>
-// import yszUI from "ysz-ui";
-// import "ysz-ui/dist/style.css";
-// import "ysz-ui/dist/iconfont.css";
-
-// app.use(yszUI)
-</script>
+// yszui/index.js
+import { button, table } from 'ysz-ui'
+const yszUI = {
+  install: function (Vue) {
+    Vue.use(button)
+    Vue.use(table)
+  }
+}
+export default yszUI

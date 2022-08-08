@@ -23,6 +23,17 @@ export default [
                 component: () => import("/packages/table/doc/doc.md"),
             },
             {
+                path: "layout",
+                name: "layout 布局",
+                type: "common",
+                component: () => import("/packages/layout/doc/doc.md"),
+            },      {
+                path: "icon",
+                name: "icon 图标",
+                type: "common",
+                component: () => import("/packages/icon/doc/doc.md"),
+            },
+            {
                 path: "introduce",
                 name: "介绍",
                 type: "prologue",

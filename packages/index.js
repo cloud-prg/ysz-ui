@@ -12,7 +12,8 @@ import button from "./button/";
 import input from "./input/";
 import backtop from "./backtop/";
 import table from "./table/"
-
+import col from "./ccol"
+import row from "./crow"
 
 // 非功能类组件(用于代码显示)
 import preview from "../src/components/preview.vue";
@@ -20,7 +21,7 @@ import previewBox from "../src/components/previewBox.vue";
 
 
 // 组件列表，在app实例上注册
-const components = [button, input, backtop, table , preview,previewBox];
+const components = [button, input, backtop, table ,col, row, preview, previewBox];
 
 // 表达式写成函数的好处：能在return前添加额外的执行语句。
 const install = app => {
@@ -36,5 +37,7 @@ const install = app => {
 if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue)
 }
-const yszUI = { install };
-export default yszUI;
+
+// 为按需导入组件时可以直接解构，这里导出使用对象方式
+export { button, input, backtop, table, preview, previewBox };
+export default { install }
