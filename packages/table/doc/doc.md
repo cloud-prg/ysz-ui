@@ -11,6 +11,7 @@
 <script setup>
 import demo1 from './demo1.vue'
 import demo2 from './demo2.vue'
+import demo3 from './demo3.vue'
 import demo4 from './demo4.vue'
 import Attributes from './Attributes.vue'
 import Fileds from './fileds.vue'
@@ -40,6 +41,13 @@ import Fileds from './fileds.vue'
 
 </preview-box>
 
+
+## 表头隐藏
+ 你可以使用 _showHeader_ 这个属性，去控制表头的显隐
+ <preview-box>
+ <demo3 />
+ <preview :isShow="false"  comName='table' demoName='demo3' />
+ </preview-box>
 
 ## 自定义表头及表格样式
 

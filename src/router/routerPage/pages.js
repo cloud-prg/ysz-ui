@@ -27,11 +27,17 @@ export default [
                 name: "layout 布局",
                 type: "common",
                 component: () => import("/packages/layout/doc/doc.md"),
-            },      {
+            }, {
                 path: "icon",
                 name: "icon 图标",
                 type: "common",
                 component: () => import("/packages/icon/doc/doc.md"),
+            },
+            {
+                path: "message",
+                name: "message 消息框",
+                type: "common",
+                component: () => import("/packages/message/doc/doc.md"),
             },
             {
                 path: "introduce",

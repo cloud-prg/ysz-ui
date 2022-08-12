@@ -1,20 +1,19 @@
 <script setup>
-import { ref , getCurrentInstance} from 'vue';
+import { getCurrentInstance} from 'vue';
 const { proxy } = getCurrentInstance();
 
 const handleClick = ()=>{
-  proxy.$message({text:"失败下载失败失败",type:"error",delay:500000})
+  proxy.$message({text:"我的前缀图标变成了 眼睛",prefixIcon:"eye",delay:2000})
 }
 
 </script>
 <template>
   <div class="test-container">
-    <c-button type="primary" size="lg" @click="handleClick">下载</c-button>
+    <c-button type="info" plain size="md" @click="handleClick">前缀图标修改提示</c-button>
   </div>
 </template>
 <style lang="scss" scoped>
 .test-container {
-  border: 1px solid black;
   padding: 20px;
 
 }

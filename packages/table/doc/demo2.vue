@@ -10,11 +10,11 @@ import { reactive } from "vue";
 const state = reactive({
   dataSource: {
     fields: [
-      { field: "id", title: "ID", align: "center" },
-      { field: "name", title: "姓名", align: "center" },
-      { field: "job", title: "职业", align: "center" },
-      { field: "address", title: "地址", align: "center" },
-      { field: "from", title: "籍贯", align: "center" },
+      { field: "id", title: "ID" },
+      { field: "name", title: "姓名" },
+      { field: "job", title: "职业" },
+      { field: "address", title: "地址" },
+      { field: "from", title: "籍贯" },
     ],
     datas: [
       {

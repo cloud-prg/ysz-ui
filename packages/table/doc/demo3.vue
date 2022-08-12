@@ -1,5 +1,5 @@
 <template>
-  <c-table :dataSource="dataSource"></c-table>
+  <c-table :dataSource="dataSource" :showHeader="false"></c-table>
 </template>
 
 <script setup>

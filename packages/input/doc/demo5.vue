@@ -1,10 +1,10 @@
 <script setup>
 import {ref} from 'vue'
-const inputValue = ref("");
+const inputValue = ref("点击右侧按钮显隐输入值");
 </script>
 <template>
    <div class='demo-container'>
-    <c-input placeholder="基本使用" v-model="inputValue"></c-input>
+    <c-input v-model="inputValue" showPwd></c-input>
    </div>
 </template>
 <style lang='scss' scoped>

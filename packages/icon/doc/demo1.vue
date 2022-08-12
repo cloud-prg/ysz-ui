@@ -4,11 +4,14 @@ export default {
 }
 </script>
 <script setup>
-import { reactive } from "vue";
+import { reactive , getCurrentInstance } from "vue";
 import iconJson from "../../../src/assets/iconfont/iconfont.json";
 const { glyphs } = iconJson;
+const { proxy } = getCurrentInstance();
+
 const rec = reactive({
     demoList: [...glyphs.slice(0, 5)],
+    // demoList: [...glyphs],
 })
 
 
@@ -18,7 +21,7 @@ const copyIconName = name=>{
     document.body.appendChild(area);
     area.select();
     document.execCommand("copy");
-    console.log("复制成功")
+    proxy.$message({text:"复制成功",type:"success",delay: 3000});
     document.body.removeChild(area);
 }
 </script>
@@ -36,8 +39,8 @@ const copyIconName = name=>{
     flex-wrap: wrap;
 
     .icon-box {
-        width: 120px;
-        height: 70px;
+        width: 136px;
+        height: 75px;
         display: flex;
         flex-direction: column;
         align-items: center;

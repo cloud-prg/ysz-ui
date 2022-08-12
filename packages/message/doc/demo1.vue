@@ -1,20 +1,19 @@
 <script setup>
-import { ref , getCurrentInstance} from 'vue';
+import { getCurrentInstance} from 'vue';
 const { proxy } = getCurrentInstance();
 
 const handleClick = ()=>{
-  proxy.$message({text:"失败下载失败失败",type:"error",delay:500000})
+  proxy.$message({text:"消息框的默认使用",delay:1000})
 }
 
 </script>
 <template>
   <div class="test-container">
-    <c-button type="primary" size="lg" @click="handleClick">下载</c-button>
+    <c-button type="info" plain size="md" @click="handleClick">消息提示</c-button>
   </div>
 </template>
 <style lang="scss" scoped>
 .test-container {
-  border: 1px solid black;
   padding: 20px;
 
 }

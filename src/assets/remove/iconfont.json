@@ -6,6 +6,76 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "43905",
+      "name": "info",
+      "font_class": "info",
+      "unicode": "e6e5",
+      "unicode_decimal": 59109
+    },
+    {
+      "icon_id": "1226475",
+      "name": "error",
+      "font_class": "error1",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "1363824",
+      "name": "error",
+      "font_class": "error2",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "10304434",
+      "name": "success",
+      "font_class": "success",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "10678418",
+      "name": "info",
+      "font_class": "info1",
+      "unicode": "e6de",
+      "unicode_decimal": 59102
+    },
+    {
+      "icon_id": "11215475",
+      "name": "success",
+      "font_class": "success1",
+      "unicode": "e726",
+      "unicode_decimal": 59174
+    },
+    {
+      "icon_id": "11488163",
+      "name": "warning",
+      "font_class": "warning",
+      "unicode": "e76d",
+      "unicode_decimal": 59245
+    },
+    {
+      "icon_id": "5466020",
+      "name": "clear",
+      "font_class": "clear",
+      "unicode": "e710",
+      "unicode_decimal": 59152
+    },
+    {
+      "icon_id": "6151209",
+      "name": "eye",
+      "font_class": "eye",
+      "unicode": "e7ed",
+      "unicode_decimal": 59373
+    },
+    {
+      "icon_id": "16618555",
+      "name": "no_eye",
+      "font_class": "no_eye",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
       "icon_id": "4766289",
       "name": "add user",
       "font_class": "adduser",

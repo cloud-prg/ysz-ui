@@ -4,7 +4,7 @@ const inputValue = ref("");
 </script>
 <template>
    <div class='demo-container'>
-    <c-input placeholder="基本使用" v-model="inputValue"></c-input>
+    <c-input placeholder="禁止输入,禁止点击，聚焦禁止" v-model="inputValue" disabled></c-input>
    </div>
 </template>
 <style lang='scss' scoped>

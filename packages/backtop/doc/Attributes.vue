@@ -1,11 +1,11 @@
 <template>
-  <m-table :options="options" size="small"></m-table>
+  <c-table :dataSource="dataSource" ></c-table>
 </template>
 
 <script setup>
 import { reactive } from "vue";
 const state = reactive({
-  options: {
+  dataSource: {
     fileds: [
       { field: "attr", title: "参数", align: "center" },
       { field: "type", title: "类型", align: "center" },
@@ -52,7 +52,7 @@ const state = reactive({
     ],
   },
 });
-const { options } = state;
+const { dataSource } = state;
 </script>
 
 <style lang="scss" scoped>

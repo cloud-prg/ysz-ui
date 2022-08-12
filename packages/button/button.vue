@@ -26,7 +26,7 @@ const { type, plain , disabled , size} = defineProps({
 })
 
 const typeArr = ["success", "warning", "info", "danger", "primary"]
-const sizeArr = ["sm","md","lg","xl"];
+const sizeArr = ["sm","md","ml","lg","xl"];
 
 const cClass = computed(() => {
     let classArr = ['c-button'];

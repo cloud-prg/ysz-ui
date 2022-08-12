@@ -3,6 +3,7 @@
     import demo2 from "./demo2.vue"
     import demo3 from "./demo3.vue"
     import demo4 from "./demo4.vue"
+    import Attributes from "./Attributes.vue"
 </script>
 
 
@@ -40,6 +41,9 @@
 <demo4 />
 <preview comName="button" demoName="demo4" />
 </preview-box>
+
+# Attributes 参数
+<Attributes />
 
 
 

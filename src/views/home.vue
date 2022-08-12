@@ -20,7 +20,7 @@
                     <component :is="Component" />
                 </transition>
             </router-view>
-            <backtop :delay="5" target=".router-view" />
+            <backtop :delay="5" right="25" bottom="65" target=".router-view" />
         </perfect-scrollbar>
 
 
@@ -77,22 +77,17 @@ html {
     height: 500px;
 }
 
-
 .slide-fade-enter-from,
 .slide-fade-leave-to {
     opacity: 0;
     transform: translateX(-45px);
-
 }
 
 .slide-fade-enter-to,
 .slide-fade-leave-from {
     opacity: 1;
     transition: all 0.8s ease;
-
 }
-
-
 
 .container {
     width: 100%;
@@ -153,7 +148,7 @@ html {
     .router-view {
         flex: 1;
         height: auto;
-        padding: 0 70px;
+        padding: 0 70px 10px 70px;
         margin-left: 300px;
         position: relative;
 

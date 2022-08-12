@@ -2,6 +2,7 @@ $primary: #409EFF !default;
 $success: #67C23A !default;
 $warning: #E6A23C !default;
 $danger: #F56C6C !default;
+$error: #F56C6C !default;
 $info: #909399 !default;
 $default: none !default;
 $light-white: #fff9f2 !default;
@@ -13,6 +14,7 @@ $plain-primary: #e2edf8 !default;
 $plain-success: #f0f9eb !default;
 $plain-warning: #fbf3e6 !default;
 $plain-danger: #f6dcdc !default;
+$plain-error: #f6dcdc !default;
 $plain-info: #e2e8f4 !default;
 
 $colorList: (
@@ -20,6 +22,7 @@ $colorList: (
     success: $success,
     warning: $warning,
     danger: $danger,
+    error: $error,
     info: $info,
     default: $default,
 );
@@ -28,8 +31,19 @@ $plain-colorList: (
     plain-success: $plain-success,
     plain-warning: $plain-warning,
     plain-danger: $plain-danger,
+    plain-error: $plain-error,
     plain-info: $plain-info,
 );
+
+$plain-bgColorList: (
+    primary: $plain-primary,
+    success: $plain-success,
+    warning: $plain-warning,
+    danger: $plain-danger,
+    error: $plain-error,
+    info: $plain-info,
+);
+
 
 
 $border-base-color: #e2dede !default;
@@ -44,10 +58,14 @@ $table-th-color: #646468 !default;
 $table-tr-color: #646468 !default;
 $table-td-color: #646468 !default;
 
-$font-size-base: 16px !default;
-$font-size-default: 16px !default;
+$input-border-color: rgba(220, 223, 230, 0.9647058824) !default;
+$input-placeholder-color: #c6c8cc !default;
+
+
+$font-size-base: 17px !default;
+$font-size-default: 17px !default;
 $font-size-sm: 12px !default;
-$font-size-md: 16px !default;
+$font-size-md: 17px !default;
 $font-size-ml: 20px !default;
 $font-size-lg: 24px !default;
 $font-size-xl: 28px !default;
@@ -60,4 +78,22 @@ $sizeList:(
     ml: $font-size-ml,
     lg: $font-size-lg,
     xl: $font-size-xl
+);
+
+$top5: 5% !default;
+$top20: 20% !default;
+$top35: 35% !default;
+$top50: 50% !default;
+$top65: 65% !default;
+$top80: 80% !default;
+
+$topList: (
+    top5: $top5,
+    top20: $top20,
+    top35: $top35,
+    top50: $top50,
+    top65: $top65,
+    top80: $top80,
 )
+
+

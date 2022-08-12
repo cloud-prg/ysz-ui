@@ -71,7 +71,7 @@ getCode(comName, demoName)
 
 <template>
     <div class="preview-container" v-highlight>
-        <transition name="slide-fade">
+        <transition name="code-fade">
             <pre class="language-html" v-show="isShowCode">
            <code class=" language-html" v-html="context" ></code>
             <i class="c-icon-copy copy" @click="copyCode"></i>
@@ -79,29 +79,30 @@ getCode(comName, demoName)
         </transition>
 
         <div class="footer" @click="handleToggleShow">
-            <span>{{ isShowCode ? '隐藏代码' : '显示代码' }}</span>
-            &lt;/
-            &gt;
+            <span class="code-show-hide">{{ isShowCode ? '隐藏代码' : '显示代码' }}</span>
+            <i v-show="!isShowCode" class="c-icon-arrow-down"></i>
+            <i v-show="isShowCode" class="c-icon-arrow-up"></i>
         </div>
     </div>
 </template>
 
 
 <style lang="scss" scoped>
-.slide-fade-enter-to {
+.code-fade-enter-to {
     opacity: 1;
-    transition: all 0.2s ease;
+    transform: translateY(0px);
+    transition: all 0.4s ease;
 }
 
-.slide-fade-leave-from {
+.code-fade-leave-from {
     opacity: 1;
 }
 
-.slide-fade-enter-from,
-.slide-fade-leave-to {
+.code-fade-enter-from,
+.code-fade-leave-to {
     opacity: 0;
-    transform: translateY(-25px);
-    transition: all 0.2s ease;
+    transform: translateY(-50px);
+    transition: all 0.4s ease;
 }
 
 .preview-container {
@@ -111,6 +112,25 @@ getCode(comName, demoName)
     border-left: 1px solid #f0f0f0;
     border-right: 1px solid #f0f0f0;
     position: relative;
+
+    &:hover {
+        box-shadow: 0px 2px 6px -2px $footer-base-color;
+        transition: box-shadow 0.2s ease;
+
+        .footer {
+            i {
+                transform: translateX(-10px);
+                transition: all 0.3s ease;
+            }
+
+            .code-show-hide {
+                transform: translateX(-20px);
+                transition: all 0.3s ease;
+                opacity: 1;
+            }
+        }
+
+    }
 
     .copy {
         font-size: $font-size-lg;
@@ -135,8 +155,28 @@ getCode(comName, demoName)
         font-weight: 100;
 
         &:hover {
-            box-shadow: 0px 2px 6px -2px $footer-base-color;
-            transition: box-shadow 0.2s ease;
+
+            i {
+                transform: translateX(-10px);
+                transition: all 0.3s ease;
+            }
+
+            .code-show-hide {
+                transform: translateX(-20px);
+                transition: all 0.3s ease;
+                opacity: 1;
+            }
+        }
+
+        .code-show-hide {
+            opacity: 0;
+            transform: translateX(-40px);
+            display: inline-block;
+        }
+
+        i {
+            transform: translateX(-50px);
+            display: inline-block;
         }
 
         .arrow {

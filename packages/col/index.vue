@@ -26,7 +26,7 @@ const marginLeft = ref(isValidProp(offset));
 function isValidProp(prop) {
   const int = parseInt(prop);
   if (int > 0 && int <= 24) {
-    return 100/24 * int + "%";
+    return 100 * int/24 + "%";
   }
   return "";
 } 

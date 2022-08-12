@@ -1,15 +1,6 @@
-<!--
- * @Author: Yun 912453237@qq.com
- * @Date: 2022-08-06 15:46:49
- * @LastEditors: Yun 912453237@qq.com
- * @LastEditTime: 2022-08-06 19:56:56
- * @FilePath: \vuepress-learn-jsf:\test-baseui\packages\ctable\doc\Attributes.vue
- * @Description: 
- * 
- * Copyright (c) 2022 by Yun 912453237@qq.com, All Rights Reserved. 
--->
+
 <template>
-  <c-table :dataSource="dataSource" size="sm"></c-table>
+  <c-table :dataSource="dataSource" ></c-table>
 </template>
 
 <script setup>
@@ -17,11 +8,11 @@ import { reactive } from "vue";
 const state = reactive({
   dataSource: {
     fields: [
-      { field: "attr", title: "参数", align: "center" },
-      { field: "type", title: "类型", align: "center" },
-      { field: "explain", title: "说明", align: "center", width: "350px" },
-      { field: "sel", title: "可选值", align: "center" },
-      { field: "def", title: "默认值", align: "center" },
+      { field: "attr", title: "参数" },
+      { field: "type", title: "类型" },
+      { field: "explain", title: "说明" },
+      { field: "sel", title: "可选值" },
+      { field: "def", title: "默认值" },
     ],
     datas: [
       {
@@ -35,7 +26,7 @@ const state = reactive({
         attr: "size",
         type: "String",
         explain: "表格尺寸大小",
-        sel: "default / small / mini",
+        sel: "sm / md / lg / xl",
         def: "default",
       },
       {

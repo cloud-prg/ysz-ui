@@ -28,14 +28,15 @@ const { target, delay, right, bottom} = defineProps({
         default: 10
     },
     right: {
-        type: Number,
+        type: [Number,String],
         default: 15
     },
     bottom: {
-        type: Number,
+        type: [Number,String],
         default: 15
     },
 })
+console.log(right,bottom)
 
 const slot = useSlots(); // 插槽对象实例化;
 const isShow = ref(false); // 是否显示
@@ -44,22 +45,24 @@ const innerBottom = ref(bottom); // 距离下边框的百分比
 const timer = ref(null); // 滚动条不断向上移动距离 定时器
 const targetScrollTop = ref(0) // 目标文本对象滚动条顶部距离，用于控制图标是否显示
 
-// 点击回滚至顶
+// 点击回滚至顶(从慢到快)
 const handleBacktop = () => {
     /**
      * - 设置定时器, 每隔特定时间 滚动条向上滚动
      * - 如果目标文本对象 滚动条的 scrollTop 小于等于0 , 清除定时器。
      * - 每次点击的时候,清除定时器，并重新赋值新的。做到防抖效果
     */
-    timer.value != null && clearInterval(timer);
-
+    clearInterval(timer.value);
+    let distance = 1; // 向上滑动的距离
     timer.value = setInterval(() => {
-        targetScrollTop.value -= 30; // 每隔一段时间，向上滑动30px
+        distance += 1;
+        targetScrollTop.value -= distance; // 定时器每次循环，距离都会+1，因为fn的词法作用域会被记住(闭包)
         if (typeof document != "undefined") {
             document.querySelector(target).scrollTop = targetScrollTop.value;
         }
         targetScrollTop.value <= 0 && clearInterval(timer.value) && (targetScrollTop.value = 0);
-        console.log(targetScrollTop.value )
+        // console.log("distance",distance);
+        // console.log(targetScrollTop.value )
     }, delay)
 }
 

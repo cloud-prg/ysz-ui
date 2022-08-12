@@ -12,8 +12,9 @@ import button from "./button/";
 import input from "./input/";
 import backtop from "./backtop/";
 import table from "./table/"
-import col from "./ccol"
-import row from "./crow"
+import col from "./col"
+import row from "./row"
+import Message from "./message";
 
 // 非功能类组件(用于代码显示)
 import preview from "../src/components/preview.vue";
@@ -28,6 +29,8 @@ const install = app => {
     // 如果已安装，则不继续执行。
     if (install.installed) return;
     // 按个人所需添加东西...
+    app.config.globalProperties.$message = Message;
+    
     components.forEach(component => {
         app.component(component.name, component);
     })
