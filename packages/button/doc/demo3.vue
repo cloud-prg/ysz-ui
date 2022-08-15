@@ -6,4 +6,5 @@
     <c-button disabled  type="danger">危险按钮</c-button>
     <c-button disabled  type="primary">主体按钮</c-button>
     <c-button disabled  type="info">信息按钮</c-button>
+    <c-button disabled  mode="link">链接禁用</c-button>
 </template>

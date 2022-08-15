@@ -78,7 +78,7 @@ onMounted(() => {
 <template>
     <transition name="msg-fade">
         <div :class="['message-wrapper', `message-wrapper-${type}`, `message-wrapper-${size}`]" :style="messageStyle" v-show="isShow">
-
+            <slot></slot>
             <span>
                 <i :class="iconClass"></i>
                 {{ text }}</span>
@@ -90,7 +90,7 @@ onMounted(() => {
 .msg-fade-enter-to,
 .msg-fade-leave-from {
     opacity: 1;
-    transition: all 0.7s ease-out;
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
     transform: translateY(0);
 
 }
@@ -99,7 +99,7 @@ onMounted(() => {
 .msg-fade-enter-from,
 .msg-fade-leave-to {
     opacity: 0;
-    transition: all 0.7s ease-out;
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
     transform: translateY(-50px);
 }
 

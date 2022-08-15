@@ -20,7 +20,7 @@
                     <component :is="Component" />
                 </transition>
             </router-view>
-            <backtop :delay="5" right="25" bottom="65" target=".router-view" />
+            <c-backtop target=".router-view" />
         </perfect-scrollbar>
 
 
@@ -31,19 +31,19 @@
 import menuList from "@/router/routerPage/pages.js";
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
-import Backtop from "../../packages/backtop/backtop.vue";
 let homeHeight = ref(0); // 主页高度
 let activeIndex = ref(sessionStorage.getItem("menuIndex") || "prologue-0"); // 导航下标
 const router = useRouter(); // 实例化路由
 const docList = menuList[0].children; // 文档列表
-const routerViewRef = ref(null); // 子路由的文本对象
 
 // 文档标题，内容列表(完整列表)
 let entireList = {
     journal: { name: "更新日志", clickable: true, children: [] },
     prologue: { name: "快速上手", clickable: false, children: [] },
-    common: { name: "通用组件", clickable: false, children: [] },
-    
+    initial: { name: "初始化", clickable: false, children: [] },
+    common: { name: "通用", clickable: false, children: [] },
+    interactive: { name: "交互", clickable: false, children: [] },
+
 }
 
 // 完整列表拿到对应路径
@@ -91,11 +91,12 @@ html {
 
 .container {
     width: 100%;
+    height: 704px;
     display: flex;
 
     .left-menu {
         width: 300px;
-        height: 100%;
+        height: calc(100% - 58px);
         overflow-y: auto;
         border-right: 1px solid #f0f0f0;
         position: fixed;
@@ -151,7 +152,6 @@ html {
         padding: 0 70px 10px 70px;
         margin-left: 300px;
         position: relative;
-
     }
 }
 </style>

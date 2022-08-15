@@ -6,30 +6,28 @@ import Attributes from './Attributes.vue'
 
 # Layout 布局
 
-#### 简单的自适应页面布局
+ 简单的自适应页面布局
 
-## 基本使用
+# 基本使用
 
-#### Layout 基本使用，将每一行平均分为 24 列。
+## Layout 基本使用，将每一行平均分为 24 列。
 
-<br/>
 
-<preivew-box>
-  <demo1/>
-<preview comName="layout" demoName="demo1"/>
-</preivew-box>
+<preview-box>
+<demo1 />
+<preview :isShow="false"  comName='layout' demoName='demo1' />
+</preview-box>
 
-## 位置偏移
 
-#### 通过 _offset_ 设置偏移占用指定的列数。
+# 位置偏移
+## 通过 `offset` 设置偏移占用指定的列数。
 
-<br/>
-<preivew-box>
+<preview-box>
   <demo2/>
-<preview comName="layout" demoName="demo2"/>
-</preivew-box>
+<preview :isShow="false" comName="layout" demoName="demo2"/>
+</preview-box>
 
-## Attributes 参数
+# Attributes 参数
 
 <Attributes/>
 <br/>

@@ -4,7 +4,7 @@ export default {
 }
 </script>
 <script setup>
-import { onMounted, ref, getCurrentInstance } from "vue";
+import {  ref, getCurrentInstance } from "vue";
 
 let isShowCode = ref(isShow);
 let context = ref(null); // 待渲染的html模板
@@ -60,8 +60,7 @@ function copyCode() {
     if (selection.rangeCount > 0) selection.removeAllRanges(); //如果页面已经有选取了的话，会自动删除这个选区，没有选区的话，会把这个选取加入选区
     selection.addRange(range); //将range对象添加到selection选区当中，会高亮文本块
     document.execCommand('copy'); //复制选中的文字到剪贴板
-    // this.$toast('复制成功')
-    console.log("复制成功!");
+    proxy.$message({text:'复制成功',type:"success",delay:1000});
     selection.removeRange(range); // 移除选中的元素
 }
 
@@ -112,6 +111,7 @@ getCode(comName, demoName)
     border-left: 1px solid #f0f0f0;
     border-right: 1px solid #f0f0f0;
     position: relative;
+
 
     &:hover {
         box-shadow: 0px 2px 6px -2px $footer-base-color;

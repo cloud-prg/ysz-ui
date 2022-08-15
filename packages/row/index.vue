@@ -7,14 +7,14 @@ export default {
 
 </script>
 <template>
-  <div class="ysz-row-default">
+  <div class="c-row-default">
     <slot></slot>
   </div>
 </template>
 
 
 <style lang="scss" scoped>
-.ysz-row-default {
+.c-row-default {
   width: 100%;
   height: auto;
   box-sizing: border-box;

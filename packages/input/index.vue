@@ -59,12 +59,6 @@ const inputRef = ref(null); // 输入框Dom
 // emit
 const emit = defineEmits(["update:modelValue", "update:inputType", "change","input","focus","blur"]);
 
-// 框值相应
-const handleInput = e => {
-    emit("update:modelValue", e.target.value);
-    emit("input",e);
-}
-
 // 左图像类集合
 const leftIconClass = computed(() => {
     const classArr = [`c-input-icon`, 'left-icon'];
@@ -106,6 +100,14 @@ const clearIconClick = () => {
     // 点击后重新聚焦
     inputRef.value.focus();
 }
+
+// ---原生方法---
+// 框值相应
+const handleInput = e => {
+    emit("update:modelValue", e.target.value);
+    emit("input",e);
+}
+
 
 // 原生change
 const change = e => {

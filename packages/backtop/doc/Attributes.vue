@@ -1,53 +1,39 @@
 <template>
-  <c-table :dataSource="dataSource" ></c-table>
+  <c-table :dataSource="dataSource"></c-table>
 </template>
 
 <script setup>
 import { reactive } from "vue";
 const state = reactive({
   dataSource: {
-    fileds: [
-      { field: "attr", title: "参数", align: "center" },
-      { field: "type", title: "类型", align: "center" },
-      { field: "red", title: "说明", align: "center", width: "350px" },
-      { field: "sel", title: "可选值", align: "center" },
-      { field: "def", title: "默认值", align: "center" },
+    fields: [
+      { field: "attr", title: "参数" },
+      { field: "type", title: "类型" },
+      { field: "red", title: "说明" },
+      { field: "sel", title: "可选值" },
+      { field: "def", title: "默认值" },
     ],
     datas: [
       {
         attr: "target",
         type: "String",
-        red: "触发滚动的元素对象",
+        red: "父级容器的id或class值",
         sel: "——",
         def: "body",
       },
-      {
-        attr: "visibilityHeight",
-        type: "Number",
-        red: '滚动达到这个距离出现"回到顶部组件"',
-        sel: "——",
-        def: "240",
-      },
-      {
+        {
         attr: "right",
         type: "Number",
-        red: "组件距离右侧的距离",
+        red: "图标相对于父级容器右边框的距离(百分比)",
         sel: "——",
-        def: "20",
+        def: "2",
       },
-      {
+         {
         attr: "bottom",
         type: "Number",
-        red: "组件距离底部的距离",
+        red: "图标相对于父级容器底边框的距离(百分比)",
         sel: "——",
-        def: "40",
-      },
-      {
-        attr: "customClass",
-        type: "String",
-        red: "自定义组件类名",
-        sel: "——",
-        def: "——",
+        def: "5",
       },
     ],
   },

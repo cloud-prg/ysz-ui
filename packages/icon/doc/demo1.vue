@@ -4,29 +4,27 @@ export default {
 }
 </script>
 <script setup>
-import { reactive , getCurrentInstance } from "vue";
+import { reactive, getCurrentInstance, createElementVNode } from "vue";
 import iconJson from "../../../src/assets/iconfont/iconfont.json";
 const { glyphs } = iconJson;
 const { proxy } = getCurrentInstance();
 
 const rec = reactive({
     demoList: [...glyphs.slice(0, 5)],
-    // demoList: [...glyphs],
 })
 
-
-const copyIconName = name=>{
-    const area = document.createElement("textarea");
-    area.innerText= name;
-    document.body.appendChild(area);
-    area.select();
+const copyIconName = name => {
+    const inputEle = document.createElement("input")
+    inputEle.value = name;
+    document.body.appendChild(inputEle);
+    inputEle.select();
     document.execCommand("copy");
-    proxy.$message({text:"复制成功",type:"success",delay: 3000});
-    document.body.removeChild(area);
+    proxy.$message({text:"拷贝成功",type:"success",delay:1500});
+    document.body.removeChild(inputEle);
 }
 </script>
 <template>
-    <div class="container">
+    <div class="icon-demo1-container">
         <div v-for="(item, index) in rec.demoList" :key="index" @click="copyIconName(item.font_class)" class="icon-box">
             <i :class="`c-icon-${item.font_class}`"></i>
             <span>{{ item.font_class }}</span>
@@ -34,7 +32,7 @@ const copyIconName = name=>{
     </div>
 </template>
 <style lang="scss" scoped>
-.container {
+.icon-demo1-container {
     display: flex;
     flex-wrap: wrap;
 
@@ -59,6 +57,7 @@ const copyIconName = name=>{
             background-color: $primary;
             transition: all 0.5s ease;
             cursor: pointer;
+
             span,
             i {
                 color: white;

@@ -11,32 +11,28 @@
 
 <script>
 export default {
-    name: "backtop",
+    name: "cBacktop",
 }
 </script>
 <script setup>
 import { onBeforeUnmount, onMounted, ref, useSlots } from "vue";
 
 // 取传值
-const { target, delay, right, bottom} = defineProps({
+const { target, right, bottom } = defineProps({
     target: {
         type: String,
         default: "body"
     },
-    delay: {
-        type: Number,
-        default: 10
-    },
     right: {
-        type: [Number,String],
-        default: 15
+        type: [Number, String],
+        default: 2
     },
     bottom: {
-        type: [Number,String],
-        default: 15
+        type: [Number, String],
+        default: 5
     },
 })
-console.log(right,bottom)
+console.log(right, bottom)
 
 const slot = useSlots(); // 插槽对象实例化;
 const isShow = ref(false); // 是否显示
@@ -63,7 +59,7 @@ const handleBacktop = () => {
         targetScrollTop.value <= 0 && clearInterval(timer.value) && (targetScrollTop.value = 0);
         // console.log("distance",distance);
         // console.log(targetScrollTop.value )
-    }, delay)
+    })
 }
 
 // 滚动条回调
@@ -79,7 +75,6 @@ onMounted(() => {
     }
 })
 
-
 // 卸载前
 onBeforeUnmount(() => {
     if (typeof document != "undefined") {
@@ -90,11 +85,13 @@ onBeforeUnmount(() => {
 
 <template>
     <transition name="fade">
-        <div class="backtop-box" v-show="isShow" @click="handleBacktop"
-            :style="{ 'right': innerRight + 'px', 'bottom': innerBottom + 'px' }">
+        <div class="backtop-container" v-show="isShow" @click="handleBacktop"
+            :style="{ 'right': innerRight + '%', 'bottom': innerBottom + '%' }">
             <slot v-if="slot['default']"></slot>
             <div v-else>
-                <i class="c-icon-backtop1 backtop"></i>
+                <div class="backtop-box">
+                    <i class="c-icon-backtop1 icon"></i>
+                </div>
             </div>
         </div>
     </transition>
@@ -103,34 +100,39 @@ onBeforeUnmount(() => {
 
 
 <style lang="scss" scoped>
-.fade-enter-from,.fade-leave-to{
+.fade-enter-from,
+.fade-leave-to {
     opacity: 0;
-       transition: all 0.5s ease;
+    transition: all 0.5s ease;
 
 }
 
-.fade-enter-to,.fade-leave-from{
+.fade-enter-to,
+.fade-leave-from {
     opacity: 1;
     transition: all 0.5s ease;
 }
 
-.backtop-box {
+.backtop-container {
     position: fixed;
     width: 40px;
     height: 40px;
-    line-height: 37px;
-    background-color: $primary;
-    color: white;
-    text-align: center;
+    z-index: 999;
     cursor: pointer;
-    border-radius: 5px;
 
     &:hover {
         opacity: 0.8;
     }
+    .backtop-box {
+        border-radius: 5px;
+        line-height: 37px;
+        background-color: $primary;
+        color: white;
+        text-align: center;
 
-    .backtop {
-        font-size: 30px;
+        .icon {
+            font-size: 30px;
+        }
     }
 }
 </style>

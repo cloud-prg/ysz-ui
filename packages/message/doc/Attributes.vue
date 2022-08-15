@@ -1,6 +1,6 @@
 
 <template>
-  <c-table :dataSource="dataSource" size="sm"></c-table>
+  <c-table :dataSource="dataSource" ></c-table>
 </template>
 
 <script setup>

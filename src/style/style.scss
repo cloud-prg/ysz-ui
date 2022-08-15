@@ -1,5 +1,6 @@
 $primary: #409EFF !default;
 $success: #67C23A !default;
+$other: #51c26dbf !default;
 $warning: #E6A23C !default;
 $danger: #F56C6C !default;
 $error: #F56C6C !default;
@@ -25,6 +26,7 @@ $colorList: (
     error: $error,
     info: $info,
     default: $default,
+    other: $other,
 );
 $plain-colorList: (
     plain-primary: $plain-primary,

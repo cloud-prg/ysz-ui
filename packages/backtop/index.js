@@ -1,9 +1,9 @@
-import backtop from "./backtop.vue";
+import cBacktop from "./backtop.vue";
 
 // 为组件提供instal方法，按需引入
-backtop.install = app => {
-    app.component(backtop.name,backtop);
+cBacktop.install = app => {
+    app.component(cBacktop.name,cBacktop);
 }
 
 // 默认导出组件
-export default backtop ;
+export default cBacktop ;

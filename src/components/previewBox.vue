@@ -16,7 +16,6 @@ export default {
 <script setup>
 
 </script>
-
 <template>
     <div class="preview-box">
         <slot></slot>

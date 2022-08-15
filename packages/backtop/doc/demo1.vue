@@ -1,4 +1,5 @@
 <!-- html -->
 <template>
-  <m-backtop></m-backtop>
+  <c-backtop right="2" bottom="25" target=".router-view" />
+    
 </template>

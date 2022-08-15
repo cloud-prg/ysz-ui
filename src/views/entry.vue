@@ -9,23 +9,31 @@ const toHome = () => {
     toOther();
 }
 
-const feature = reactive({
-    List: [
+// 引用类型数据
+const state = reactive({
+    featureList: [
         {
             title: "手工搭建",
             describe: "维护组件,更新拓展项目更方便"
         },
         {
-            title: "知识分享",
-            describe: ""
+            title: "项目框架支持",
+            describe: "基于vue3.x开发,支持vue3使用"
         },
         {
-            title: "",
-            describe: ""
+            title: "使用方式灵活",
+            describe: "可以按需导入组件，也可一次性导入全部。"
         },
+        {
+            title: "交互处理",
+            describe: "渐进增强使用CSS3 animation和transition，增强组件交互体验。"
+        }
     ]
 })
 
+const { featureList } = state;
+
+// props
 const { toOther } = defineProps({
     toOther: {
         type: Function,
@@ -40,7 +48,7 @@ onMounted(() => {
 })
 
 router.beforeEach((to, from, next) => {
-    if(to.path== "/home/introduce"){
+    if (to.path == "/home/introduce") {
         sessionStorage.clear();
     }
     next();
@@ -54,20 +62,11 @@ router.beforeEach((to, from, next) => {
         <span class="describe">纯手工搭建,方便扩展</span>
         <c-button size="xl" class="button-container" type="primary" @click="toHome">快速上手🚀</c-button>
         <div class="feature-list">
-            <div class="item">
-                <span class="title">手工搭建</span>
-                <span class="describe">维护组件,更新拓展项目更方便</span>
-            </div>
-            <div class="item">
-                <span class="title">项目框架支持</span>
-                <span class="describe">基于vue3.x开发,支持vue3使用</span>
-            </div>
-            <div class="item">
-                <span class="title">想法记录</span>
-                <span class="describe">记录日常开发或游览社区时的灵感。</span>
+            <div class="item" v-for="(item, index) in featureList" :key="index">
+                <span class="title">{{ item.title }}</span>
+                <span class="describe">{{ item.describe }}</span>
             </div>
         </div>
-
         <div class="right-clare">
             MIT Licensed | Copyright © 2022-present
         </div>
@@ -115,13 +114,13 @@ router.beforeEach((to, from, next) => {
             width: auto;
             height: 70%;
             justify-content: space-around;
-
+            flex: 1;
+            
             .title {
                 font-size: $font-size-xl;
             }
 
             .describe {
-
                 font-size: $font-size-base;
             }
 
@@ -137,7 +136,7 @@ router.beforeEach((to, from, next) => {
         }
     }
 
-    .right-clare{
+    .right-clare {
         color: $clare;
     }
 }

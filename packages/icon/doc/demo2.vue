@@ -15,7 +15,6 @@ const { demoList } = reactive({
 })
 
 const fontClassList = ref(demoList.map(item => item.font_class));
-console.log(fontClassList.value)
 // 框内值
 const handleInput = e => {
     console.log(e.target.value);

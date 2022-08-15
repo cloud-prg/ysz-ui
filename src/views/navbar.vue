@@ -18,10 +18,11 @@ const nav = reactive({
             path: "/home/introduce"
         },
         {
-            name: "个人博客",
+            name: "github仓库",
             path: "blank",
-            url: "https://yunshangzhou.github.io/js-book/"
+            url: "https://github.com/YunShangZhou/ysz-ui"
         },
+
     ]
 })
 // 转到首页

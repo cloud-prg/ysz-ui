@@ -1,24 +1,18 @@
-<!-- html -->
 <template>
-  <m-backtop target=".mzluirightView" :bottom="100">
-    <span class="backtop">
-      <i class="m-icon-direction-up"></i>
-    </span>
-  </m-backtop>
+  <c-backtop right="2" bottom="15" target=".router-view" >
+    <div class="slot-class">插槽</div>
+  </c-backtop>
 </template>
 
 <style lang="scss" scoped>
-.backtop {
-  width: 45px;
-  height: 45px;
-  display: inline-block;
-  border-radius: 50%;
-  line-height: 45px;
+.slot-class{
+  background-color: $other;
+  color: white;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: bold;
+  line-height: 2;
   text-align: center;
-  background: #f57b29;
-  i {
-    font-size: 20px;
-    color: #fff;
-  }
 }
 </style>
