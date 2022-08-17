@@ -1,5 +1,5 @@
 <script setup>
-import navLogoImg from "../assets/navLogo.png";
+import logoImg from "../assets/logo.jpg";
 import { onMounted, reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 const route = useRouter();
@@ -15,7 +15,7 @@ const nav = reactive({
         },
         {
             name: "组件",
-            path: "/home/prologue"
+            path: "/home/introduce"
         },
         {
             name: "github仓库",
@@ -56,12 +56,13 @@ defineExpose({ toOther });
 </script>
 <template>
     <!-- 组件库导航栏 -->
-    <!-- 该有的结构: flex布局,水平布局按照中间空白隔开的方式。左侧navLogo,右侧导航菜单。 -->
+    <!-- 该有的结构: flex布局,水平布局按照中间空白隔开的方式。左侧logo,右侧导航菜单。 -->
     <div class="navbar">
         <div class="left-part">
-            <div class="navLogo-container">
-                <a href="javascript:;" class="navLogo-part" @click="toHome">
-                    <img :src="navLogoImg" class="navLogo" alt="导航栏左侧navLogo图标" />
+            <div class="logo-container">
+                <a href="javascript:;" class="top-part" @click="toHome">
+                    <img :src="logoImg" class="logo" alt="导航栏左侧logo图标" />
+                    <span>ysz-ui</span>
                 </a>
                 <!-- <div class="bottom-part">
                     ver 0.0.1
@@ -92,22 +93,40 @@ defineExpose({ toOther });
     z-index: 99;
 
     .left-part {
-        .navLogo-container {
+        .logo-container {
             margin-left: 30px;
             cursor: pointer;
 
-            .navLogo-part {
-                border-bottom: 2px solid transparent;
-                .navLogo {
-                    width: auto;
-                    height: 30px;
+            .top-part {
+                padding-bottom: 5px;
+                width: 110px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                span {
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    font-size: 20px;
+
                 }
+
+                .logo {
+                    width: 40px;
+                }
+
                 &:hover {
-                    border-bottom: 2px solid #3D85C6;
+                    box-shadow: 0 2px 4px -3px rgb(199, 199, 199);
+                    text-shadow: 1px 1px 10px #c0baba;
                 }
             }
 
-
+            // .bottom-part {
+            //     width: 100%;
+            //     text-align: center;
+            //     letter-spacing: 2px;
+            //     font-size: 12px;
+            // }
         }
     }
 

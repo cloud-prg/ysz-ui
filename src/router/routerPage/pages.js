@@ -23,18 +23,6 @@ export default [
                 type: "common",
                 component: () => import("/packages/table/doc/doc.md"),
             },
-            {
-                path: "checkbox",
-                name: "checkbox 选项",
-                type: "common",
-                component: () => import("/packages/checkbox/doc/doc.md"),
-            },
-            {
-                path: "gap",
-                name: "gap 间距",
-                type: "common",
-                component: () => import("/packages/gap/doc/doc.md"),
-            },
             // 全局
             {
                 path: "backtop",
@@ -58,12 +46,6 @@ export default [
             },
             // 前言
             {
-                path: "prologue",
-                name: "前言",
-                type: "prologue",
-                component: () => import("/packages/prologue/doc/prologue.md"),
-            },
-            {
                 path: "introduce",
                 name: "介绍",
                 type: "prologue",
@@ -75,18 +57,12 @@ export default [
                 type: "prologue",
                 component: () => import("/packages/prologue/doc/install.md"),
             },
-            {
-                path: "notice",
-                name: "注意事项",
-                type: "prologue",
-                component: () => import("/packages/prologue/doc/notice.md"),
-            },
-            {
-                path: "test",
-                name: "测试页面",
-                type: "prologue",
-                component: () => import("../../views/testPage.vue"),
-            },
+            // {
+            //     path: "test",
+            //     name: "测试页面",
+            //     type: "prologue",
+            //     component: () => import("../../views/testPage.vue"),
+            // },
             // 更新日志
             {
                 path: "journal",
@@ -95,7 +71,6 @@ export default [
                 isUnique: true,
                 component: () => import("/packages/journal/doc/index.md"),
             },
-
             // 初始化
             {
                 path: "color",

@@ -10,7 +10,7 @@ const state = reactive({
     colorList: ["primary", "warning", "success", "other", "danger", "info"],
     opacityList: ["1", "0.9", "0.8", "0.7", "0.6", "0.5", "0.4", "0.3", "0.2", "0.1", "0"],
     colorCodeObj: {
-        primary: '#3D85C6',
+        primary: '#409EFF',
         success: '#67C23A',
         other: '#51c26dbf',
         warning: '#E6A23C',

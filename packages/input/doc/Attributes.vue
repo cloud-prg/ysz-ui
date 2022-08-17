@@ -1,6 +1,6 @@
 
 <template>
-  <c-table :dataSource="dataSource"></c-table>
+  <c-table :dataSource="dataSource" ></c-table>
 </template>
 
 <script setup>
@@ -16,13 +16,6 @@ const state = reactive({
     ],
     datas: [
       {
-        attr: "v-model",
-        type: "String | Number",
-        explain: "输入框value值",
-        sel: "——",
-        def: "''",
-      },
-      {
         attr: "width",
         type: "String",
         explain: "设置输入框的宽度",
@@ -35,6 +28,13 @@ const state = reactive({
         explain: "设置输入框的高度",
         sel: "——",
         def: "35px",
+      },
+      {
+        attr: "modelValue",
+        type: "String | Number",
+        explain: "输入框的value值",
+        sel: "——",
+        def: "——",
       },
       {
         attr: "placeholder",

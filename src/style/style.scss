@@ -1,4 +1,4 @@
-$primary: #3D85C6 !default;
+$primary: #409EFF !default;
 $success: #67C23A !default;
 $other: #51c26dbf !default;
 $warning: #E6A23C !default;
@@ -10,8 +10,6 @@ $light-white: #fff9f2 !default;
 $clare: #4e6e8e !default;
 $item: #444 !default;
 
-$blue: #0F459A !default;
-$light-blue: #3D85C6 !default;
 
 $plain-primary: #e2edf8 !default;
 $plain-success: #f0f9eb !default;
@@ -74,15 +72,8 @@ $font-size-ml: 20px !default;
 $font-size-lg: 24px !default;
 $font-size-xl: 28px !default;
 
-$entry-bg-color: #FFFAFF !default;
-$entry-title-color: rgb(65, 83, 100) !default;
-$entry-describe-color: #8797b3 !default;
 
-$disabled-bg-color: #ebebeb !default;
-$disabled-font-color: #b4b6b9 !default;
-$disabled-border-color: #b9b9b9 !default;
-
-$sizeList: (
+$sizeList:(
     default: $font-size-default,
     sm : $font-size-sm,
     md: $font-size-base,
@@ -105,4 +96,6 @@ $topList: (
     top50: $top50,
     top65: $top65,
     top80: $top80,
-    )
+)
+
+
