@@ -6,9 +6,11 @@ export default {
 <script setup>
 import { computed } from "vue";
 
-
-
-const { bgColor, color, type, mode, href, plain, disabled, size } = defineProps({
+const { bgColor, color, type, mode, href, plain, disabled, size, extraClass } = defineProps({
+    extraClass: {
+        type: String,
+        default: ""
+    },
     bgColor: {
         type: String,
         default: ""
@@ -47,13 +49,13 @@ const { bgColor, color, type, mode, href, plain, disabled, size } = defineProps(
 })
 
 // 主题类型数组
-const typeArr = ["success", "warning", "info", "danger", "primary","other"]
+const typeArr = ["success", "warning", "info", "danger", "primary", "other"]
 // 字号数组
 const sizeArr = ["sm", "md", "ml", "lg", "xl"];
 
 // 按钮类集合
 const buttonClass = computed(() => {
-    let classArr = ['c-button'];
+    let classArr = ['c-button', extraClass];
     let computedType = typeArr.includes(type) ? `c-button-${type}` : 'c-button-default';
     // 如果朴素风格开启
     plain && type && (computedType = `c-button-plain-${type}`);
@@ -68,7 +70,7 @@ const buttonClass = computed(() => {
 
 // a链接类集合
 const linkClass = computed(() => {
-    let classArr = ['c-link'];
+    let classArr = ['c-link', extraClass];
     let computedType = typeArr.includes(type) ? `c-link-${type}` : 'c-link-default';
     classArr.push(computedType);
 
@@ -114,7 +116,7 @@ button {
         outline: none;
         background: none;
         line-height: 1;
-        font-size: 14px;
+        font-size: $font-size-md;
         color: #f0f0f0;
         border-radius: 5px;
     }
