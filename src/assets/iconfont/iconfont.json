@@ -6,6 +6,55 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "68268",
+      "name": "分享",
+      "font_class": "fenxiang",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "159929",
+      "name": "share",
+      "font_class": "fenxiang1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "248966",
+      "name": "share",
+      "font_class": "share",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "577337",
+      "name": "分享",
+      "font_class": "fenxiang2",
+      "unicode": "e739",
+      "unicode_decimal": 59193
+    },
+    {
+      "icon_id": "6353306",
+      "name": "share",
+      "font_class": "share1",
+      "unicode": "e86f",
+      "unicode_decimal": 59503
+    },
+    {
+      "icon_id": "7009008",
+      "name": "share",
+      "font_class": "share2",
+      "unicode": "e729",
+      "unicode_decimal": 59177
+    },
+    {
+      "icon_id": "11488129",
+      "name": "share",
+      "font_class": "share3",
+      "unicode": "e764",
+      "unicode_decimal": 59236
+    },
+    {
       "icon_id": "43905",
       "name": "info",
       "font_class": "info",

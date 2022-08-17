@@ -29,14 +29,14 @@ const state = reactive({
         sel: "button | link",
         def: "button",
       },
-            {
+      {
         attr: "href",
         type: "String",
         explain: "a链接原生属性,接收URL地址",
         sel: "——————",
         def: "javascript: void(0)",
       },
-            {
+      {
         attr: "target",
         type: "String",
         explain: "a链接原生属性,跳转URL的方式",
@@ -63,6 +63,13 @@ const state = reactive({
         explain: "按钮字号大小设置",
         sel: "sm | md | ml | lg | xl",
         def: "md",
+      },
+      {
+        attr: "extraClass",
+        type: "String",
+        explain: "自定义类名",
+        sel: "",
+        def: "''",
       },
     ],
   },

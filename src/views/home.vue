@@ -134,14 +134,14 @@ html {
             }
 
             li:hover {
-                color: #0e88eb;
+                color: $blue;
                 transition: all 0.2s ease-out;
             }
 
             li.active {
-                border-left: 5px solid #0e88eb;
-                color: #0e88eb;
-                background-color: rgba(14, 128, 235, .1);
+                border-left: 5px solid $blue;
+                color: $blue;
+                background-color: lighten($light-blue,35%);
             }
         }
     }

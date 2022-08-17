@@ -53,12 +53,15 @@ const handleAfterClose4 = () => {
 </script>
 <template>
     <div>
-        <c-button type="success" plain @click="handlePopup">字号20px</c-button>
-        <c-button type="primary" plain @click="handlePopup2">字号30px</c-button>
-        <c-button type="warning" plain @click="handlePopup3">字号40px</c-button>
-        <c-button type="info" plain @click="handlePopup4">字号50px</c-button>
+        <c-gap>
+            <c-button type="success" plain @click="handlePopup">字号20px</c-button>
+            <c-button type="primary" plain @click="handlePopup2">字号30px</c-button>
+            <c-button type="warning" plain @click="handlePopup3">字号40px</c-button>
+            <c-button type="info" plain @click="handlePopup4">字号50px</c-button>
+        </c-gap>
 
-        <c-popup  :isShow="isShow" size="20" @afterClose="handleAfterClose">
+
+        <c-popup :isShow="isShow" size="20" @afterClose="handleAfterClose">
             <div class="content">
                 <img src="../../../src/assets/hongbao2.png" :style="{ 'height': '500px' }" />
             </div>

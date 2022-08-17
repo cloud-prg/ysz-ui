@@ -104,7 +104,7 @@ const classes = computed(() => {
                     padding: 12px 14px;
                     border-right: transparent;
                     border: 1px solid #f0f0f0;
-                    background-color: #fafafa;
+                    background-color:darken(#fafafa,1%);
                     color: $table-th-color;
                     font-size: $font-size-base;
                     text-align: left;
@@ -136,7 +136,7 @@ const classes = computed(() => {
                 }
 
                 &:hover {
-                    background-color: #fafafa;
+                    background-color: darken(#fafafa,2%);
                 }
             }
 
