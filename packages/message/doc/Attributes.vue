@@ -15,27 +15,26 @@ const state = reactive({
       { field: "def", title: "默认值" },
     ],
     datas: [
-      // { text, size, type, bgColor, color, prefixIcon, delay }
       {
         attr: "text",
         type: "String",
         explain: "消息框提示内容",
         sel: "——",
-        def: "——",
+        def: "''",
       },
       {
         attr: "size",
         type: "String",
         explain: "消息框字号大小",
         sel: "sm | md | ml | lg | xl",
-        def: "——",
+        def: "md",
       },
       {
         attr: "type",
         type: "String",
         explain: "消息框类型",
         sel: "primary | info | success | warning | error",
-        def: "——",
+        def: "info",
       },
       {
         attr: "bgColor",
@@ -62,7 +61,7 @@ const state = reactive({
         type: "Number",
         explain: "消息框停留在界面的时间(毫秒)",
         sel: "——",
-        def: "——",
+        def: "2000",
       },
       
     ],

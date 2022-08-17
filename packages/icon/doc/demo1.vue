@@ -19,7 +19,7 @@ const copyIconName = name => {
     document.body.appendChild(inputEle);
     inputEle.select();
     document.execCommand("copy");
-    proxy.$message({text:"拷贝成功",type:"success",delay:1500});
+    proxy.$message({text:"复制成功",type:"success",delay:1500});
     document.body.removeChild(inputEle);
 }
 </script>

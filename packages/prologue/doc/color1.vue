@@ -7,14 +7,13 @@ export default {
 import { reactive, ref, getCurrentInstance } from 'vue'
 const { proxy } = getCurrentInstance();
 const state = reactive({
-    colorList: ["primary", "warning", "success", "other", "danger", "info"],
-    opacityList: ["1", "0.9", "0.8", "0.7", "0.6", "0.5", "0.4", "0.3", "0.2", "0.1", "0"],
+    colorList: ["primary", "warning", "success", "other", "danger","error", "info"],
     colorCodeObj: {
         primary: '#3D85C6',
         success: '#67C23A',
         other: '#51c26dbf',
         warning: '#E6A23C',
-        danger: '#F56C6C',
+        danger: '#f91111',
         error: '#F56C6C',
         info: '#909399 ',
     }
@@ -28,18 +27,18 @@ const handleCopy = name => {
     document.body.appendChild(inputElement);
     inputElement.select();
     document.execCommand('copy');
-    proxy.$message({ text: "复制成功", type: "success" })
+    proxy.$message({ text: "复制成功", type: name })
     document.body.removeChild(inputElement);
 }
 
 </script>
 <template>
     <div class="color-container" @click="handleCopy(item)" v-for="(item, index) in colorList" :key="index">
-        <div :class="['color-item', `color-item-${item}`]" v-for="(oItem, oIndex) in opacityList"
-            :style="{ 'opacity': oItem }" :key="oIndex">
+        <div :class="['color-item', `color-item-${item}`]" v-for="number in 10"
+            :style="{ 'opacity': (11-number)*0.1 }" :key="number">
 
-            <span>{{ oIndex == 0 ? item : "" }}</span>
-            <span>{{ oIndex == 0 ? colorCodeObj[item] : "" }}</span>
+            <span>{{ number-1 == 0 ? item : "" }}</span>
+            <span>{{ number-1 == 0 ? colorCodeObj[item] : "" }}</span>
         </div>
     </div>
 </template>

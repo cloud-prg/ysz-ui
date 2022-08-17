@@ -3,9 +3,11 @@
     <div class="container" :style="{ height: homeHeight + 'px' }">
         <perfect-scrollbar class="left-menu">
             <div class="entire-item" v-for="(v, k) in entireList" :key="k">
-                <span :class="{ active: activeIndex == k, 'clickable-title': true }" v-if="v.clickable"
-                    @click="handleChangeActive(v.name, k)">{{ v.name
-                    }}</span>
+                <c-tip v-if="v.clickable" type="primary" top="0" value="v0.1.3">
+                    <span :class="{ active: activeIndex == k, 'clickable-title': true }"
+                        @click="handleChangeActive(v.name, k)">{{ v.name
+                        }}</span>
+                </c-tip>
                 <span v-else class="unclickable-title">{{ v.name }}</span>
                 <li v-for="(item, index) in v.children" :key="`${k}-${index}`"
                     :class="{ active: activeIndex == `${k}-${index}` }"
@@ -141,7 +143,7 @@ html {
             li.active {
                 border-left: 5px solid $blue;
                 color: $blue;
-                background-color: lighten($light-blue,35%);
+                background-color: lighten($light-blue, 35%);
             }
         }
     }

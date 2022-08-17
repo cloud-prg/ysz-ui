@@ -52,7 +52,9 @@ const iconClass = computed(() => {
         "primary": "user",
         "success": "success",
         "warning": "warning",
-        "error": "error"
+        "error": "error",
+        "danger": "error",
+        "other": "share3",
     }
     if (!prefixIcon) {
         return [`c-icon-${iconObj[type]}`]

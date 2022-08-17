@@ -35,7 +35,7 @@ export default [
                 type: "common",
                 component: () => import("/packages/gap/doc/doc.md"),
             },
-            // 全局
+            // 交互
             {
                 path: "backtop",
                 name: "backtop 回到顶部",
@@ -56,6 +56,14 @@ export default [
                 type: "interactive",
                 component: () => import("/packages/message/doc/doc.md"),
             },
+
+            {
+                path: "tip",
+                name: "tip 消息提示",
+                type: "interactive",
+                component: () => import("/packages/tip/doc/doc.md"),
+            },
+
             // 前言
             {
                 path: "prologue",
