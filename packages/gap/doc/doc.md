@@ -37,7 +37,7 @@ import Attributes from './Attributes.vue'
 
 <preview-box>
   <demo3/>
-<preview :isShow="false" comName="gap" demoName="demo3"/>
+<preview  comName="gap" demoName="demo3"/>
 </preview-box>
 
 ## 自定义类名
@@ -45,7 +45,7 @@ import Attributes from './Attributes.vue'
 
 <preview-box>
 <demo4 />
-<preview :isShow="false" comName="gap" demoName="demo4"/>
+<preview  comName="gap" demoName="demo4"/>
 </preview-box>
 
 
@@ -54,7 +54,7 @@ import Attributes from './Attributes.vue'
 
 <preview-box>
 <demo5 />
-<preview :isShow="false" comName="gap" demoName="demo5"/>
+<preview  comName="gap" demoName="demo5"/>
 </preview-box>
 
 ## Attributes 参数

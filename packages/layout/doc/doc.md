@@ -15,7 +15,7 @@ import Attributes from './Attributes.vue'
 
 <preview-box>
 <demo1 />
-<preview :isShow="false"  comName='layout' demoName='demo1' />
+<preview   comName='layout' demoName='demo1' />
 </preview-box>
 
 
@@ -24,7 +24,7 @@ import Attributes from './Attributes.vue'
 
 <preview-box>
   <demo2/>
-<preview :isShow="false" comName="layout" demoName="demo2"/>
+<preview  comName="layout" demoName="demo2"/>
 </preview-box>
 
 # Attributes 参数

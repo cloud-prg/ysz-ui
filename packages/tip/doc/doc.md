@@ -14,7 +14,7 @@
 
 <preview-box>
 <demo1 />
-<preview :isShow="false" comName='tip' demoName='demo1' />
+<preview  comName='tip' demoName='demo1' />
 </preview-box>
 
 # 上限设置
@@ -22,7 +22,7 @@
 
 <preview-box>
 <demo2 />
-<preview :isShow="false" comName='tip' demoName='demo2' />
+<preview  comName='tip' demoName='demo2' />
 </preview-box>
 
 
@@ -30,14 +30,14 @@
 多种颜色主题供选择
 <preview-box>
 <demo3 />
-<preview :isShow="false"  comName='tip' demoName='demo3' />
+<preview   comName='tip' demoName='demo3' />
 </preview-box>
 
 # 位置调整
 可调整 **提示** 的距离，使其可在父级的**任意位置**。
 <preview-box>
 <demo4 />
-<preview :isShow="false" comName='tip' demoName='demo4' />
+<preview  comName='tip' demoName='demo4' />
 </preview-box>
 
 # 数字省略
@@ -45,7 +45,7 @@
 
 <preview-box>
 <demo5 />
-<preview :isShow="false" comName='tip' demoName='demo5' />
+<preview  comName='tip' demoName='demo5' />
 </preview-box>
 
 

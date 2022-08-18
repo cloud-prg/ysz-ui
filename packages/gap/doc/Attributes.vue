@@ -24,14 +24,14 @@ const state = reactive({
       {
         attr: "horizontal",
         type: "String | Number",
-        red: "自定义水平间距大小",
+        red: "自定义水平间距大小(px)",
         sel: "——",
         def: "10",
       },
       {
         attr: "vertical",
         type: "String | Number",
-        red: "自定义垂直间距大小",
+        red: "自定义垂直间距大小(px)",
         sel: "——",
         def: "10",
       },

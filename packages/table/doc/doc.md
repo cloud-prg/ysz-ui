@@ -26,7 +26,7 @@ import Fileds from './fileds.vue'
 
 <preview-box>
   <demo1/>
-<preview :isShow="false" comName="table" demoName="demo1"/>
+<preview  comName="table" demoName="demo1"/>
 
 </preview-box>
 
@@ -36,7 +36,7 @@ import Fileds from './fileds.vue'
 
 <preview-box>
   <demo2/>
-<preview :isShow="false" comName="table" demoName="demo2"/>
+<preview  comName="table" demoName="demo2"/>
 
 </preview-box>
 
@@ -45,7 +45,7 @@ import Fileds from './fileds.vue'
  你可以使用 `showHeader` 这个属性，去控制表头的显隐
  <preview-box>
  <demo3 />
- <preview :isShow="false"  comName='table' demoName='demo3' />
+ <preview   comName='table' demoName='demo3' />
  </preview-box>
 
 ## 自定义表头及表格样式
@@ -54,7 +54,7 @@ import Fileds from './fileds.vue'
 
 <preview-box>
   <demo4/>
-<preview :isShow="false" comName="table" demoName="demo4"/>
+<preview  comName="table" demoName="demo4"/>
 </preview-box>
 
 ## Attributes 参数

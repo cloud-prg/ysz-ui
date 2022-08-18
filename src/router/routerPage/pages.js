@@ -49,21 +49,24 @@ export default [
                 type: "interactive",
                 component: () => import("/packages/popup/doc/doc.md"),
             },
-
             {
                 path: "message",
                 name: "message 消息框",
                 type: "interactive",
                 component: () => import("/packages/message/doc/doc.md"),
             },
-
             {
                 path: "tip",
                 name: "tip 消息提示",
                 type: "interactive",
                 component: () => import("/packages/tip/doc/doc.md"),
             },
-
+            {
+                path: "drawer",
+                name: "drawer 抽屉",
+                type: "interactive",
+                component: () => import("/packages/drawer/doc/doc.md"),
+            },
             // 前言
             {
                 path: "prologue",

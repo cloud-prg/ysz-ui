@@ -15,7 +15,7 @@
   
 <preview-box>
 <demo1 />
-<preview  :isShow="false" comName='icon' demoName='demo1' />
+<preview   comName='icon' demoName='demo1' />
 </preview-box>
 
 # 图库搜索

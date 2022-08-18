@@ -17,7 +17,7 @@
 
 <preview-box>
         <demo1 />
-        <preview :isShow="false" comName="button" demoName="demo1" />
+        <preview  comName="button" demoName="demo1" />
 </preview-box>
 
 
@@ -26,7 +26,7 @@
 
 <preview-box>
 <demo2 />
-<preview :isShow="false" comName="button" demoName="demo2" />
+<preview  comName="button" demoName="demo2" />
 </preview-box>
 
 ## 模式切换(链接模式)

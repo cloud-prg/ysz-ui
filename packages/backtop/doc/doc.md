@@ -27,7 +27,7 @@ import Attributes from './Attributes.vue'
 
 <preview-box>
   <demo2/>
-  <preview :isShow="false" comName="backtop" demoName="demo2"/>
+  <preview  comName="backtop" demoName="demo2"/>
 </preview-box>
 
 ## 自定义元素展示
@@ -35,7 +35,7 @@ import Attributes from './Attributes.vue'
  通过插槽的方式自定义元素展示(若没有`domString`或 **节点** 添入，则使用默认置顶图标)
 <preview-box>
   <demo3/>
-  <preview :isShow="false" comName="backtop" demoName="demo3"/>
+  <preview  comName="backtop" demoName="demo3"/>
 </preview-box>
 
 

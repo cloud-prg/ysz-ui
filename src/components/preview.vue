@@ -18,7 +18,7 @@ const { comName, demoName, isShow } = defineProps({
     },
     isShow: {
         type: Boolean,
-        default: true,
+        default: false,
     }
 })
 
@@ -155,7 +155,6 @@ getCode(comName, demoName)
         font-weight: 100;
 
         &:hover {
-
             i {
                 transform: translateX(-10px);
                 transition: all 0.3s ease;
