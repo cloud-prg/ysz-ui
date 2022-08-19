@@ -8,6 +8,12 @@ a {
   color: black;
 }
 
+// body容器
+body{
+  padding:0;
+  margin: 0;
+}
+
 // 调整第三方滚动条的样式
 // 悬停时的样式
 .ps__rail-y:hover>.ps__thumb-y,
@@ -63,23 +69,4 @@ a {
   }
 
 
-}
-
-
-.message-container {
-  height: 60px;
-  width: 280px;
-  position: absolute;
-  padding: 0 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-}
-
-@each $key,$val in $topList{
-  .message-container-#{$key} {
-    top: $val
-  }
 }

@@ -6,8 +6,19 @@ export default ({ text, size, type, bgColor, color, prefixIcon, delay=700 }) => 
 
     // 根据数量，调整top的距离
     const divLength = document.querySelectorAll(".message-container").length;
-    div.setAttribute("class", `message-container message-container-top${5 + divLength * 15}`)
-
+    div.setAttribute("class", `message-container`)
+    
+    div.style=`height: 60px;
+    width: 280px;
+    position: absolute;
+    padding: 0 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    top:${5 + divLength * 15}%
+    `
     // 数量限制，最多有5个提示框(一般情况也不会有5个)
     if (divLength == 5) return;
     // 文本添加节点

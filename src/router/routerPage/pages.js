@@ -35,6 +35,12 @@ export default [
                 type: "common",
                 component: () => import("/packages/gap/doc/doc.md"),
             },
+            {
+                path: "tree",
+                name: "tree 树",
+                type: "common",
+                component: () => import("/packages/tree/doc/doc.md"),
+            },
             // 交互
             {
                 path: "backtop",
@@ -92,12 +98,12 @@ export default [
                 type: "prologue",
                 component: () => import("/packages/prologue/doc/notice.md"),
             },
-            {
-                path: "test",
-                name: "测试页面",
-                type: "prologue",
-                component: () => import("../../views/testPage.vue"),
-            },
+            // {
+            //     path: "test",
+            //     name: "测试页面",
+            //     type: "prologue",
+            //     component: () => import("../../views/testPage.vue"),
+            // },
             // 更新日志
             {
                 path: "journal",

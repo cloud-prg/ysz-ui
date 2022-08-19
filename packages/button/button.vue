@@ -49,7 +49,7 @@ const { bgColor, color, type, mode, href, plain, disabled, size, extraClass } = 
 })
 
 // 主题类型数组
-const typeArr = ["success", "warning", "info", "danger", "primary", "other"]
+const typeArr = ["success", "warning", "info", "danger","error", "primary", "other"]
 // 字号数组
 const sizeArr = ["sm", "md", "ml", "lg", "xl"];
 

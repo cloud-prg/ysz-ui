@@ -18,19 +18,20 @@ import popup from "./popup";
 import checkbox from "./checkbox";
 import gap from "./gap";
 import tip from "./tip";
-import drawer from "./drawer"
+import drawer from "./drawer";
+import tree from "./tree";
 
 // 全局方法引入
 import Message from "./message";
-
 
 // 非功能类组件(用于代码显示)
 import preview from "../src/components/preview.vue";
 import previewBox from "../src/components/previewBox.vue";
 
 
+
 // 组件列表，在app实例上注册
-const components = [button, input, backtop, gap, popup, tip, table, checkbox , drawer, col, row, preview, previewBox];
+const components = [button, input, backtop, gap, popup, tip, table, checkbox ,tree , drawer, col, row, preview, previewBox];
 
 // 表达式写成函数的好处：能在return前添加额外的执行语句。
 const install = app => {

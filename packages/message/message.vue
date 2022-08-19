@@ -105,6 +105,7 @@ onMounted(() => {
     transform: translateY(-50px);
 }
 
+  
 
 .message-wrapper {
     width: 100%;

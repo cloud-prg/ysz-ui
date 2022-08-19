@@ -1,9 +1,10 @@
 <script setup>
-import {ref} from 'vue'
+import { ref, getCurrentInstance } from 'vue'
 const inputValue = ref("");
+const { proxy } = getCurrentInstance();
 
 const rightIconClick = ()=>{
-    alert("上传成功!");
+    proxy.$message({text:"上传成功", type:"success" , delay:2000});
 }
 
 </script>

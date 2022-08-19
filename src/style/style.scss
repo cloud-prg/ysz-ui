@@ -48,7 +48,7 @@ $plain-bgColorList: (
     danger: $plain-danger,
     error: $plain-error,
     info: $plain-info,
-    other:  $plain-other,
+    other: $plain-other,
 );
 
 
@@ -80,6 +80,9 @@ $font-size-xl: 28px !default;
 $entry-bg-color: #FFFAFF !default;
 $entry-title-color: rgb(65, 83, 100) !default;
 $entry-describe-color: #8797b3 !default;
+
+
+$checkbox-border-color: #d9d0d0 !default;
 
 $disabled-bg-color: #ebebeb !default;
 $disabled-font-color: #b4b6b9 !default;

@@ -3,18 +3,19 @@ import { getCurrentInstance} from 'vue';
 const { proxy } = getCurrentInstance();
 
 const handleClick = ()=>{
-  proxy.$message({text:"消息框的默认使用",delay:1000})
+  proxy.$message({text:"消息框的默认使用",delay:100000})
+}
+const handleTenSecondClick = ()=>{
+  proxy.$message({text:"长达10秒的提示",delay:10000})
 }
 
 </script>
 <template>
-  <div class="test-container">
+  <c-gap horizontal="10">
     <c-button type="info" plain size="md" @click="handleClick">消息提示</c-button>
-  </div>
+    <c-button type="info" plain size="md" @click="handleTenSecondClick">长达10秒的提示</c-button>
+  </c-gap>
+
 </template>
 <style lang="scss" scoped>
-.test-container {
-  padding: 20px;
-
-}
 </style>

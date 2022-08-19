@@ -4,26 +4,26 @@ export default {
 }
 </script>
 <script setup>
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
+
+const { dataSource } = reactive({
+  dataSource: [
+    { label: "1", children: [{ label: "1-1" },] },
+    { label: "2", children: [{ label: "2-1" }, { label: "2-2" }] },
+    { label: "3", children: [{ label: "3-1" }, { label: "3-2", children: [{ label: "3-2-1" }, { label: "3-2-2" }] }] },
+  ],
+})
+
+const handleCheck = (arr)=>{
+  console.log(arr);
+}
 </script>
 <template>
   <div class="test-container">
     <label>123</label>
-    <c-tip :value="100" maxCount="100">
-      <div>
-        分分钟需要你
-      </div>
-    </c-tip>
-    <c-tip :value="10">
-      <c-button>敢爱敢做</c-button>
-    </c-tip>
-
-    <!-- <c-tip :value="10">
-      <div>
-        分分钟需要你
-      </div>
-    </c-tip> -->
-
+    <!-- <c-tree :dataSource="dataSource" :isAllOpen="true" :openSelection="['3','3-2']"></c-tree> -->
+    <!-- <c-tree :dataSource="dataSource" :isAllOpen="true" :isAllChecked="true" :disabledSelection="['2-1']"></c-tree> -->
+    <c-tree :dataSource="dataSource" :isAllOpen="true" @handleCheck="handleCheck" :disabledSelection="['2-1']" :checkedSelection="['3-2-1']"></c-tree>
   </div>
 </template>
 <style lang='scss' scoped>
