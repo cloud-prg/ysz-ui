@@ -66,16 +66,45 @@ const handleNodeClick = item => {
 
 // 勾选盒子
 const handleCheckboxClick = ({ item, operation }) => {
-    // 如果存在则不加入
+    // 如果存在则不加入,且其子项全部推入数组
     if (operation == "push" && !innerCheckedSelection.includes(item.label)) {
         innerCheckedSelection.push(item.label);
+
+        // 有子项时，所有子项勾选，并推入数组。
+        if (item.children && item.children.length != 0) {
+            childrenLoop(item.children, childItem => {
+                childItem.isChecked = true;
+                innerCheckedSelection.push(childItem.label);
+            })
+        }
+
+
     } else {
         // 如果不存在则不删减
         innerCheckedSelection = innerCheckedSelection.reduce((pre, cur) => {
             cur != item.label && pre.push(cur);
             return pre;
         }, []);
+
+        // 有子项时，所有子项取消勾选，并从数组中移除。
+        if (item.children && item.children.length != 0) {
+            childrenLoop(item.children, childItem => {
+                childItem.isChecked = false;
+
+                // 存在子项，则跳过不推入。否则推入。
+                innerCheckedSelection = innerCheckedSelection.reduce((pre, cur) => {
+                    cur != childItem.label && pre.push(cur);
+                    return pre;
+                }, []);
+            })
+
+
+        }
     }
+
+
+
+
     emits("handleCheck", innerCheckedSelection)
 }
 
