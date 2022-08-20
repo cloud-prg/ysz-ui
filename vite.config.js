@@ -18,19 +18,7 @@ export default defineConfig({
     Markdown()
   ],
   build: {
-    lib: {
-      entry: "./packages/index.js",
-      name: "ysz-ui",
-      fileName: format=> `ysz-ui-${format}.js`
-    },
-    rollupOptions: {
-      external: ["vue"],
-      output: {
-        globals: {
-          vue: "Vue"
-        }
-      }
-    }
+   
   },
   css:{
     preprocessorOptions:{
