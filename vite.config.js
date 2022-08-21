@@ -17,6 +17,7 @@ export default defineConfig({
     }),
     Markdown()
   ],
+  base:"https://yunshangzhou.github.io/ysz-ui/",
   build: {
    
   },
