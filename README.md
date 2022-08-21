@@ -59,7 +59,7 @@ app.use(yszUI);
 ```
 
 # 项目地址
-[ysz-ui组件库](http://www.jiujiuwarehouse.com:5173)
+[ysz-ui组件库](http://www.jiujiuwarehouse.com)
 
 # 注意事项
   该组件库仅用于个人学习，且处于开发阶段，切勿用于生产环境。
