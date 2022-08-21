@@ -21,10 +21,19 @@ export default defineConfig({
     lib: {
       entry: "./packages/index.js",
       name: "ysz-ui",
-      fileName: format=> `ysz-ui-${format}.js`
+      fileName: format => `ysz-ui-${format}.js`
     },
     rollupOptions: {
-      external: ["vue"],
+      // 排除不要的依赖
+      external: ["vue",
+        "vue3-perfect-scrollbar",
+        "highlight.js",
+        "@vitejs/plugin-vue",
+        "sass-loader",
+        "@vitejs/plugin-vue",
+        "vite-plugin-vue-markdown",
+        "@highlightjs/vue-plugin"
+      ],
       output: {
         globals: {
           vue: "Vue"
@@ -32,9 +41,9 @@ export default defineConfig({
       }
     }
   },
-  css:{
-    preprocessorOptions:{
-      scss:{
+  css: {
+    preprocessorOptions: {
+      scss: {
         additionalData: '@use "./src/style/index.scss" as *;'
       }
     }
