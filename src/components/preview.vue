@@ -32,7 +32,7 @@ function getCode(comName, demoName) {
     let rawUrl = `../../packages/${comName}/doc/${demoName}.vue?raw`;
     console.log("_________isDev", isDev, import.meta.env.VITE_MODE_NAME);
     // 开发环境和生产环境使用不同的预浏览代码回值
-    if (isDev) {
+    if (!isDev) {
         Promise.resolve(import(/* @vite-ignore */rawUrl)).then(res => {
             const { default: df } = res; // 返回的default并不能用v-html去解析，因为它并没有完全解析成原生代码。
             // hljs.highlightAuto可以让default转为原生html,通过取值value即可。
@@ -45,11 +45,10 @@ function getCode(comName, demoName) {
          * */
         let domain = window.location.href;
         if (domain.split(".").includes("github")) {
-            domain = domain.split("#")[0] + "#";
-            rawUrl = domain + `/packages/${comName}/doc/${demoName}.vue?raw`;
+            domain = domain.split("#")[0];
+            rawUrl = domain + `packages/${comName}/doc/${demoName}.vue?raw`;
         }
 
-        console.log("rawUrl",rawUrl);
         Promise.resolve(fetch(rawUrl)).then(res => {
             return res.text()
         }).then(result => {
