@@ -39,7 +39,13 @@ function getCode(comName, demoName) {
             context.value = proxy.$hljs.highlightAuto(df).value;
         })
     } else {
-        Promise.resolve(fetch(rawUrl)).then(res => {
+        /**
+         * 判断是在github上，还是服务器上
+         * 在github上才多加前缀
+         * */ 
+        let domain = window.location.href;
+        domain.split(".").includes("github") ? (domain = domain.split("#")[0]+"#/") : "";        
+        Promise.resolve(fetch(domain+rawUrl)).then(res => {
             return res.text()
         }).then(result => {
             context.value = proxy.$hljs.highlightAuto(result).value;;
