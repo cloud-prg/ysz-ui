@@ -19,7 +19,7 @@ export default defineConfig({
   ],
   base:"./", // 资源地址前缀
   build: {
-   
+    outDir: 'docs', 
   },
   css:{
     preprocessorOptions:{
