@@ -4,7 +4,8 @@ export default {
 }
 </script>
 <script setup>
-import {  ref, getCurrentInstance } from "vue";
+import { resetTracking } from "@vue/reactivity";
+import { ref, getCurrentInstance } from "vue";
 
 let isShowCode = ref(isShow);
 let context = ref(null); // 待渲染的html模板
@@ -28,27 +29,26 @@ const { comName, demoName, isShow } = defineProps({
  * 也可以使用Async await的方式去获取
 */
 function getCode(comName, demoName) {
-    const isDev = import.meta.env.MODE === 'development'
-    const url = `../../packages/${comName}/doc/${demoName}.vue?raw`;
-
+    const isDev = import.meta.env.VITE_MODE_NAME === 'development';
+    const rawUrl = `../../packages/${comName}/doc/${demoName}.vue?raw`;
+    console.log("_________isDev", isDev, import.meta.env.VITE_MODE_NAME);
     // 开发环境和生产环境使用不同的预浏览代码回值
-    // if (isDev) {
-        // Promise.resolve(import(/* @vite-ignore */url)).then(res => {
-        //     const { default: df } = res; // 返回的default并不能用v-html去解析，因为它并没有完全解析成原生代码。
+    if (isDev) {
+        Promise.resolve(import(/* @vite-ignore */rawUrl)).then(res => {
+            const { default: df } = res; // 返回的default并不能用v-html去解析，因为它并没有完全解析成原生代码。
 
-        //     // hljs.highlightAuto可以让default转为原生html,通过取值value即可。
-        //     context.value = proxy.$hljs.highlightAuto(df).value;
-        // })
-    // } else {
-        fetch(url).then(res => {
-            const result = res.text();
-            Promise.resolve(result).then(r => {
-                context.value = proxy.$hljs.highlightAuto(r).value;
-            })
+            // hljs.highlightAuto可以让default转为原生html,通过取值value即可。
+            context.value = proxy.$hljs.highlightAuto(df).value;
         })
-    // }
-
+    } else {
+        Promise.resolve(fetch(rawUrl)).then(res => {
+            return res.text()
+        }).then(result => {
+            context.value = proxy.$hljs.highlightAuto(result).value;;
+        })
+    }
 }
+
 function handleToggleShow() {
     isShowCode.value = !isShowCode.value;
 }
@@ -60,7 +60,7 @@ function copyCode() {
     if (selection.rangeCount > 0) selection.removeAllRanges(); //如果页面已经有选取了的话，会自动删除这个选区，没有选区的话，会把这个选取加入选区
     selection.addRange(range); //将range对象添加到selection选区当中，会高亮文本块
     document.execCommand('copy'); //复制选中的文字到剪贴板
-    proxy.$message({text:'复制成功',type:"success",delay:1000});
+    proxy.$message({ text: '复制成功', type: "success", delay: 1000 });
     selection.removeRange(range); // 移除选中的元素
 }
 

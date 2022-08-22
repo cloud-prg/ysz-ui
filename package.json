@@ -22,7 +22,9 @@
     "build": "vite build && node ./src/utils/handleBuild.js",
     "preview": "vite preview"
   },
-  "dependencies": {},
+  "dependencies": {
+    "vite-plugin-raw": "^1.0.3"
+  },
   "devDependencies": {
     "@highlightjs/vue-plugin": "^2.1.0",
     "@types/node": "^18.0.6",
