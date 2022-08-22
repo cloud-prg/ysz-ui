@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 assets
+demo
 dist
 dist-ssr
 *.local
@@ -23,3 +24,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.sh
+
