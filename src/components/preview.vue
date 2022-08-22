@@ -29,7 +29,7 @@ const { comName, demoName, isShow } = defineProps({
 */
 function getCode(comName, demoName) {
     const isDev = import.meta.env.VITE_MODE_NAME === 'development';
-    const rawUrl = `../../packages/${comName}/doc/${demoName}.vue?raw`;
+    let rawUrl = `../../packages/${comName}/doc/${demoName}.vue?raw`;
     console.log("_________isDev", isDev, import.meta.env.VITE_MODE_NAME);
     // 开发环境和生产环境使用不同的预浏览代码回值
     if (isDev) {
@@ -42,10 +42,14 @@ function getCode(comName, demoName) {
         /**
          * 判断是在github上，还是服务器上
          * 在github上才多加前缀
-         * */ 
+         * */
         let domain = window.location.href;
-        domain.split(".").includes("github") ? (domain = domain.split("#")[0]+"#/") : "";        
-        Promise.resolve(fetch(domain+rawUrl)).then(res => {
+        if (domain.split(".").includes("github")) {
+            domain = domain.split("#")[0] + "#";
+            rawUrl = domain + "/packages/${comName}/doc/${demoName}.vue?raw";
+        }
+
+        Promise.resolve(fetch(rawUrl)).then(res => {
             return res.text()
         }).then(result => {
             context.value = proxy.$hljs.highlightAuto(result).value;;
