@@ -11,9 +11,9 @@ copyDir(sourcePath, targetPath, err => {
 })
 
 // 打包后的assets放到根目录
-const assetsSourcePath = path.resolve(__dirname, "../../dist/assets"); // 源目录
-const assetsTargetPath = path.resolve(__dirname, "../../assets"); // 要移向的目录
+// const assetsSourcePath = path.resolve(__dirname, "../../dist/assets"); // 源目录
+// const assetsTargetPath = path.resolve(__dirname, "../../assets"); // 要移向的目录
 
-copyDir(assetsSourcePath, assetsTargetPath, err => {
-    console.log("err", err);
-})
+// copyDir(assetsSourcePath, assetsTargetPath, err => {
+//     console.log("err", err);
+// })

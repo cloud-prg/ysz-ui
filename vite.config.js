@@ -17,7 +17,7 @@ export default defineConfig({
     }),
     Markdown()
   ],
-  base:"https://yunshangzhou.github.io/ysz-ui/",
+  base:"./", // 资源地址前缀
   build: {
    
   },

@@ -32,21 +32,21 @@ function getCode(comName, demoName) {
     const url = `../../packages/${comName}/doc/${demoName}.vue?raw`;
 
     // 开发环境和生产环境使用不同的预浏览代码回值
-    if (isDev) {
-        Promise.resolve(import(/* @vite-ignore */url)).then(res => {
-            const { default: df } = res; // 返回的default并不能用v-html去解析，因为它并没有完全解析成原生代码。
+    // if (isDev) {
+        // Promise.resolve(import(/* @vite-ignore */url)).then(res => {
+        //     const { default: df } = res; // 返回的default并不能用v-html去解析，因为它并没有完全解析成原生代码。
 
-            // hljs.highlightAuto可以让default转为原生html,通过取值value即可。
-            context.value = proxy.$hljs.highlightAuto(df).value;
-        })
-    } else {
+        //     // hljs.highlightAuto可以让default转为原生html,通过取值value即可。
+        //     context.value = proxy.$hljs.highlightAuto(df).value;
+        // })
+    // } else {
         fetch(url).then(res => {
             const result = res.text();
             Promise.resolve(result).then(r => {
                 context.value = proxy.$hljs.highlightAuto(r).value;
             })
         })
-    }
+    // }
 
 }
 function handleToggleShow() {
