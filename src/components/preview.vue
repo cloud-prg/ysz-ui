@@ -4,7 +4,6 @@ export default {
 }
 </script>
 <script setup>
-import { resetTracking } from "@vue/reactivity";
 import { ref, getCurrentInstance } from "vue";
 
 let isShowCode = ref(isShow);
@@ -36,7 +35,6 @@ function getCode(comName, demoName) {
     if (isDev) {
         Promise.resolve(import(/* @vite-ignore */rawUrl)).then(res => {
             const { default: df } = res; // 返回的default并不能用v-html去解析，因为它并没有完全解析成原生代码。
-
             // hljs.highlightAuto可以让default转为原生html,通过取值value即可。
             context.value = proxy.$hljs.highlightAuto(df).value;
         })
