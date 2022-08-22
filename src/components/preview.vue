@@ -46,9 +46,10 @@ function getCode(comName, demoName) {
         let domain = window.location.href;
         if (domain.split(".").includes("github")) {
             domain = domain.split("#")[0] + "#";
-            rawUrl = domain + "/packages/${comName}/doc/${demoName}.vue?raw";
+            rawUrl = domain + `/packages/${comName}/doc/${demoName}.vue?raw`;
         }
 
+        console.log("rawUrl",rawUrl);
         Promise.resolve(fetch(rawUrl)).then(res => {
             return res.text()
         }).then(result => {
