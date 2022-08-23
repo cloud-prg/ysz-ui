@@ -1,7 +1,7 @@
 <template>
   <div class="top-nav-box">
     <div class="logoBox">
-      <img src="../assets/logo.png" alt="yun-ui" @click="toHome" />
+      <img src="../../favicon.ico" alt="yun-ui" @click="toHome" />
       <a href="javascript:;" @click="toHome">yun UI</a>
       <span>V 0.8.5</span>
       <div class="toolsBox">

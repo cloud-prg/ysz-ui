@@ -3,8 +3,8 @@
   这是一个基于`vite vue3`搭建的`PC端`组件库。它记录**日常开发**中遇到的需求组件,或是在**技术社区**中所遇到、值得去实现的组件。
 
 <div style="'text-align':'center'">
-    <img style="'height:100px'" src="./src/assets/logo.png">
-    <img style="'height:100px'" src="./src/assets/navLogo.png">
+    <img style="'height:100px'" src="./favicon.ico">
+    <img style="'height:100px'" src="./favicon2.ico">
 </div>
 
 # 全局安装

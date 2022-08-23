@@ -1,5 +1,5 @@
 <script setup>
-import logoImg from "../assets/logo.png";
+import logoImg from "../../favicon.ico";
 import { ref, onMounted, reactive } from "vue";
 import { useRouter } from "vue-router";
 let entryHeight = ref(0);

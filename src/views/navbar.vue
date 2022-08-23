@@ -1,5 +1,5 @@
 <script setup>
-import navLogoImg from "../assets/navLogo.png";
+import navLogoImg from "../../favicon2.ico";
 import { onMounted, reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 const route = useRouter();
