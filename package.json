@@ -1,7 +1,7 @@
 {
   "name": "ysz-ui",
   "private": false,
-  "version": "0.1.6",
+  "version": "0.1.7",
   "type": "commonjs",
   "keywords": [
     "vue",
@@ -22,7 +22,9 @@
     "build": "vite build && node ./src/utils/handleBuild.js",
     "preview": "vite preview"
   },
-  "dependencies": {},
+  "dependencies": {
+    "vite-plugin-raw": "^1.0.3"
+  },
   "devDependencies": {
     "@highlightjs/vue-plugin": "^2.1.0",
     "@types/node": "^18.0.6",

@@ -4,8 +4,10 @@ import { ref, onMounted, reactive } from "vue";
 import { useRouter } from "vue-router";
 let entryHeight = ref(0);
 const router = useRouter();
-const toNext = (name) => {
+const beianFlag = ref(import.meta.env.VITE_MODE_NAME == 'production');
 
+console.log(import.meta.env.VITE_MODE_NAME)
+const toNext = (name) => {
     // 调用父级的方法
     name == 'home' && toOther();
     name == 'github' && window.open("https://github.com/YunShangZhou/ysz-ui");
@@ -84,6 +86,9 @@ router.beforeEach((to, from, next) => {
         </div>
         <div class="right-clare">
             MIT Licensed | Copyright © 2022-present
+            <a v-if="beianFlag" href="https://beian.miit.gov.cn" target="_blank">
+               闽ICP备2021010384号-1
+            </a>
         </div>
 
     </div>
@@ -173,6 +178,9 @@ router.beforeEach((to, from, next) => {
 
     .right-clare {
         color: $clare;
+        a{
+            margin-left: 5px;
+        }
     }
 }
 </style>
