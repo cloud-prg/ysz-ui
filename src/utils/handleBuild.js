@@ -25,10 +25,11 @@ copyDir(packagesSourcePath, packagesTargetPath, err => {
 })
 
 
+// pages分支不要执行以下代码
 // markdown放到打包后的dist目录
-const markdownSourcePath = path.resolve(__dirname, "../../README.md"); // 源目录
-const markdownTargetPath = path.resolve(__dirname, "../../dist/README.md"); // 要移向的目录
+// const markdownSourcePath = path.resolve(__dirname, "../../README.md"); // 源目录
+// const markdownTargetPath = path.resolve(__dirname, "../../dist/README.md"); // 要移向的目录
 
 
-// *文件拷贝
-copyFile(markdownSourcePath,markdownTargetPath)
+// // *文件拷贝
+// copyFile(markdownSourcePath,markdownTargetPath)
