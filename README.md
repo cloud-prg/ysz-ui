@@ -59,7 +59,8 @@ app.use(yszUI);
 ```
 
 # 项目地址
-[ysz-ui组件库](https://yunshangzhou.github.io/ysz-ui/#/)
+- [ysz-ui组件库-git服务器](https://yunshangzhou.github.io/ysz-ui/#/)
+- [ysz-ui组件库-阿里云服务器](http://www.ysz-ui.cn:3456)
 
 # 注意事项
   该组件库仅用于个人学习，且处于开发阶段，切勿用于生产环境。

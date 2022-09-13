@@ -51,5 +51,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 // 为按需导入组件时可以直接解构，这里导出使用对象方式
-export { button, input, backtop, popup, table, col, row, preview, previewBox };
+export { button, input, backtop, gap, popup, tip, table, checkbox ,tree , drawer, col, row };
 export default { install }
