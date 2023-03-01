@@ -4,10 +4,7 @@ export default {
 }
 </script>
 <script setup>
-import { emit } from 'process';
-import { onMounted, reactive, ref } from 'vue';
-import { createWebHistory } from 'vue-router';
-
+import { reactive } from 'vue';
 
 /**
  * 功能点:
@@ -106,7 +103,7 @@ function handleChangeCheckboxClick({ item, operation }) {
     emits("handleCheckboxClick", { item, operation })
 }
 
-console.log("multiple",multiple)
+console.log("multiple", multiple)
 </script>
 <template>
     <li class="tree-child-container" @click.stop="handleItemClick(item, index)" v-for="(item, index) in innerDataSource"
@@ -120,7 +117,7 @@ console.log("multiple",multiple)
             </span>
 
             <!-- 选项框 -->
-            
+
             <label v-show="multiple" :class="checkboxClass(item)" @click.stop="handleCheckboxClick(item)">
             </label>
 

@@ -63,6 +63,7 @@ defineExpose({ toOther });
                 <a href="javascript:;" class="navLogo-part" @click="toHome">
                     <img :src="navLogoImg" class="navLogo" alt="导航栏左侧navLogo图标" />
                 </a>
+                
                 <!-- <div class="bottom-part">
                     ver 0.0.1
                 </div> -->

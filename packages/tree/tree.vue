@@ -77,8 +77,7 @@ const handleCheckboxClick = ({ item, operation }) => {
                 innerCheckedSelection.push(childItem.label);
             })
         }
-
-
+        
     } else {
         // 如果不存在则不删减
         innerCheckedSelection = innerCheckedSelection.reduce((pre, cur) => {
@@ -161,5 +160,4 @@ function childrenLoop(data, func) {
         </c-tree-child>
     </div>
 </template>
-<style lang='scss' scoped>
-</style>
+<style lang='scss' scoped></style>
