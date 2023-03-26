@@ -58,7 +58,6 @@ onMounted(() => {
       render(slotRender, gapRef.value);
     }
     )
-
 })
 
 // 间隙盒子样式
@@ -89,7 +88,6 @@ function gapItemStyle() {
   return { margin: `${vertical || 10}px ${horizontal}px`, width: "fit-content" };
 
 }
-
 
 </script>
 <template>

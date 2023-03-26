@@ -4,7 +4,7 @@ export default {
 }
 </script>
 <script setup>
-import { ref,computed,reactive,inject,ref,nextTick,watch,defineComponent,onUpdated,createVNode } from 'vue'
+import { inject,ref } from 'vue'
 
 // 属性接收
 const props = defineProps({

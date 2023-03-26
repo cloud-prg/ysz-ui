@@ -1,6 +1,7 @@
 <script setup>
 import navbar from "@/views/navbar.vue";
-import { ref } from "vue";
+import {ref} from "vue";
+
 const navbarRef = ref();
 
 // 拿到navbar的跳转方法(第二个参数为nav下标),并传入介绍页单页中
@@ -13,7 +14,7 @@ const toOther = () => {
 </script>
 
 <template>
-  <navbar ref="navbarRef" />
+  <navbar ref="navbarRef"/>
   <router-view :toOther="toOther"></router-view>
 </template>
 

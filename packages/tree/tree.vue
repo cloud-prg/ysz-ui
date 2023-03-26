@@ -1,10 +1,10 @@
 <script>
 export default {
-    name: 'cTree',
-}
+  name: "cTree",
+};
 </script>
 <script setup>
-import { onMounted, reactive, ref } from 'vue';
+import { reactive, ref } from 'vue';
 import cTreeChild from "./treeChild.vue";
 const { dataSource, activeIndex, isAllOpen, isAllChecked, openSelection, checkedSelection, disabledSelection, multiple, extraClass } = defineProps({
     activeIndex: {
@@ -50,8 +50,7 @@ let { innerDataSource, innerCheckedSelection } = reactive({
     innerDataSource: changedDataSource(dataSource),
     innerCheckedSelection: checkedSelection,
 })
-const emits = defineEmits(["handleCheck", 'handleClick', "change"]); // 子串父
-
+const emits = defineEmits(["handleCheck", 'handleClick', "change"]); // 子传父
 
 // 接收子级 传值，更新激活项
 const change = ({ item, index }) => {
@@ -66,7 +65,7 @@ const handleNodeClick = item => {
 
 // 勾选盒子
 const handleCheckboxClick = ({ item, operation }) => {
-    // 如果存在则不加入,且其子项全部推入数组
+    // 盒子转为勾选状态，并将勾选数据存入数组。
     if (operation == "push" && !innerCheckedSelection.includes(item.label)) {
         innerCheckedSelection.push(item.label);
 
@@ -76,9 +75,6 @@ const handleCheckboxClick = ({ item, operation }) => {
                 childItem.isChecked = true;
                 innerCheckedSelection.push(childItem.label);
             })
-        }
-
-
     } else {
         // 如果不存在则不删减
         innerCheckedSelection = innerCheckedSelection.reduce((pre, cur) => {
@@ -148,18 +144,25 @@ function childrenLoop(data, func) {
         return item;
     })
 }
-
 </script>
 <template>
-    <!-- 为解决递归导致的属性不共享，创建此祖先节点 -->
-    <!-- 第一层tree-child添加 @change方法 ， 接收 子孙传上来的值，再以父传子的方式，由上往下一一层级传入activeIndex,以达到属性共享 -->
-    <div :class="['tree-container', extraClass]">
-        <c-tree-child :activeIndex="rootActiveIndex" :dataSource="innerDataSource" :isAllOpen="isAllOpen"
-            :isAllChecked="isAllChecked" :openSelection="openSelection" :checkedSelection="checkedSelection"
-            :disabledSelection="disabledSelection" :multiple="multiple" @change="change"
-            @handleCheckboxClick="handleCheckboxClick" @handleNodeClick="handleNodeClick">
-        </c-tree-child>
-    </div>
+  <!-- 为解决递归导致的属性不共享，创建此祖先节点 -->
+  <!-- 第一层tree-child添加 @change方法 ， 接收 子孙传上来的值，再以父传子的方式，由上往下一一层级传入activeIndex,以达到属性共享 -->
+  <div :class="['tree-container', extraClass]">
+    <c-tree-child
+      :activeIndex="rootActiveIndex"
+      :dataSource="innerDataSource"
+      :isAllOpen="isAllOpen"
+      :isAllChecked="isAllChecked"
+      :openSelection="openSelection"
+      :checkedSelection="checkedSelection"
+      :disabledSelection="disabledSelection"
+      :multiple="multiple"
+      @change="change"
+      @handleCheckboxClick="handleCheckboxClick"
+      @handleNodeClick="handleNodeClick"
+    >
+    </c-tree-child>
+  </div>
 </template>
-<style lang='scss' scoped>
-</style>
+<style lang="scss" scoped></style>

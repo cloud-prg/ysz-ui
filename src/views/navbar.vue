@@ -25,6 +25,7 @@ const nav = reactive({
 
     ]
 })
+
 // 转到首页
 const toHome = () => {
     // 同时要修改下标，存储至会话当中
@@ -32,6 +33,7 @@ const toHome = () => {
     tabIndex.value = 0;
     route.push('/')
 }
+
 // 转到其他页
 const toOther = (item, index) => {
     console.log(item, index)

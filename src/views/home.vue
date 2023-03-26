@@ -45,7 +45,6 @@ let entireList = {
     initial: { name: "初始化", clickable: false, children: [] },
     common: { name: "通用", clickable: false, children: [] },
     interactive: { name: "交互", clickable: false, children: [] },
-
 }
 
 // 完整列表拿到对应路径
@@ -59,7 +58,6 @@ const handleChangeActive = (name, index) => {
     activeIndex.value = index;
     router.push({ name })
 }
-
 
 onMounted(() => {
     // 挂载时初始化页面的主页面的高度

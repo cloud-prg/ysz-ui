@@ -3,7 +3,6 @@ import Vue from '@vitejs/plugin-vue'
 import Markdown from 'vite-plugin-vue-markdown'
 import { resolve } from "path";
 
-
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -13,7 +12,7 @@ export default defineConfig({
   },
   plugins: [
     Vue({
-      include: [/\.vue$/, /\.md$/], // <--
+      include: [/\.vue$/, /\.md$/],
     }),
     Markdown()
   ],
