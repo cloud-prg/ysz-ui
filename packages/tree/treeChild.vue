@@ -115,7 +115,6 @@ function handleChangeCheckboxClick({ item, operation }) {
   emits("handleCheckboxClick", { item, operation });
 }
 
-console.log("multiple", multiple);
 </script>
 <template>
   <li

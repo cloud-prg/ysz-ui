@@ -2,6 +2,9 @@ import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Markdown from 'vite-plugin-vue-markdown'
 import { resolve } from "path";
+import postcssPresetEnv from "postcss-preset-env"
+import postcssPxtorem from "postcss-pxtorem"
+import jsdom from "jsdom"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,6 +19,9 @@ export default defineConfig({
     }),
     Markdown()
   ],
+  test: {
+      environment: 'jsdom',
+  },
   build: {
     lib: {
       entry: "./packages/index.js",
@@ -45,6 +51,13 @@ export default defineConfig({
       scss: {
         additionalData: '@use "./src/style/index.scss" as *;'
       }
+    },
+    postcss: {
+      // 一些配置
+      plugins: [postcssPresetEnv(),postcssPxtorem({
+        rootValue: 16,
+        propList: ['*']
+      })]
     }
   }
 

@@ -11,6 +11,8 @@ const toOther = () => {
     path: "/home/prologue"
   }, 1)
 }
+
+remTopx(window,document,window.screen.width, 16)
 </script>
 
 <template>
