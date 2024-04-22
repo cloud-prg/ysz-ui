@@ -10,7 +10,7 @@ console.log(import.meta.env.VITE_MODE_NAME)
 const toNext = (name) => {
     // 调用父级的方法
     name == 'home' && toOther();
-    name == 'github' && window.open("https://github.com/YunShangZhou/ysz-ui");
+    name == 'github' && window.open("https://github.com/cloud-prg/ysz-ui");
 }
 
 // 引用类型数据

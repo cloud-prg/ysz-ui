@@ -20,7 +20,7 @@ const nav = reactive({
         {
             name: "github仓库",
             path: "blank",
-            url: "https://github.com/YunShangZhou/ysz-ui"
+            url: "https://github.com/cloud-prg/ysz-ui"
         },
 
     ]

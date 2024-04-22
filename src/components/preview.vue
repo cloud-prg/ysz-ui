@@ -49,7 +49,7 @@ function getCode(comName, demoName) {
    * */
   let domain = window.location.href;
   if (domain.split(".").includes("github")) {
-    rawUrl = `https://yunshangzhou.github.io/ysz-ui/packages/${comName}/doc/${demoName}.vue?raw`;
+    rawUrl = `https://cloud-prg.github.io/ysz-ui/packages/${comName}/doc/${demoName}.vue?raw`;
   }
   console.log("rawUrl", rawUrl);
   Promise.resolve(fetch(rawUrl))
